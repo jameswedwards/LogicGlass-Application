@@ -1,0 +1,32 @@
+<%= form_with(model: officer_check_in, local: true) do |form| %>
+  <% if officer_check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(officer_check_in.errors.count, "error") %> prohibited this officer_check_in from being saved:</h2>
+
+      <ul>
+        <% officer_check_in.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :officer_id %>
+    <%= form.collection_select :officer_id, Officer.all, :id, :first_name, :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.collection_select :event_id, Event.all, :id, :category, :event_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_in_date %>
+    <%= form.datetime_select :check_in_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

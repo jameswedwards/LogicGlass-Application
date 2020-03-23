@@ -1,0 +1,2 @@
+module MemberCheckInsHelper
+end

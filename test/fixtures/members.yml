@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  peoplesoft_id: 1
+  first_name: MyString
+  middle_initial: MyString
+  last_name: MyString
+  date_of_birth: 2020-03-23
+  address: MyString
+  city: MyString
+  zip: MyString
+  state: one
+  country: one
+  home_phone: MyString
+  mobile_phone: MyString
+  payment: false
+  student_class: one
+  major: MyString
+
+two:
+  peoplesoft_id: 1
+  first_name: MyString
+  middle_initial: MyString
+  last_name: MyString
+  date_of_birth: 2020-03-23
+  address: MyString
+  city: MyString
+  zip: MyString
+  state: two
+  country: two
+  home_phone: MyString
+  mobile_phone: MyString
+  payment: false
+  student_class: two
+  major: MyString

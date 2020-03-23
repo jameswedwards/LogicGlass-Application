@@ -1,0 +1,2 @@
+module CoordinatorCheckInsHelper
+end

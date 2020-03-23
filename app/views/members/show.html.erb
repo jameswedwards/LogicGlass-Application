@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Peoplesoft:</strong>
+  <%= @member.peoplesoft_id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <strong>Middle initial:</strong>
+  <%= @member.middle_initial %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @member.date_of_birth %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @member.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @member.city %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @member.zip %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @member.state_id %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @member.country_id %>
+</p>
+
+<p>
+  <strong>Home phone:</strong>
+  <%= @member.home_phone %>
+</p>
+
+<p>
+  <strong>Mobile phone:</strong>
+  <%= @member.mobile_phone %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @member.payment %>
+</p>
+
+<p>
+  <strong>Student class:</strong>
+  <%= @member.student_class_id %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @member.major %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

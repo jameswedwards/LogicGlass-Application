@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: one
+  event: one
+  check_in_date: 2020-03-23 13:21:59
+
+two:
+  member: two
+  event: two
+  check_in_date: 2020-03-23 13:21:59

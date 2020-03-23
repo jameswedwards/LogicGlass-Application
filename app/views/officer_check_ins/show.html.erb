@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Officer:</strong>
+  <%= @officer_check_in.officer_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @officer_check_in.event_id %>
+</p>
+
+<p>
+  <strong>Check in date:</strong>
+  <%= @officer_check_in.check_in_date %>
+</p>
+
+<%= link_to 'Edit', edit_officer_check_in_path(@officer_check_in) %> |
+<%= link_to 'Back', officer_check_ins_path %>

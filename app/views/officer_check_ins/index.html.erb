@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Officer Check Ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Officer</th>
+      <th>Event</th>
+      <th>Check in date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @officer_check_ins.each do |officer_check_in| %>
+      <tr>
+        <td><%= officer_check_in.officer_id %></td>
+        <td><%= officer_check_in.event_id %></td>
+        <td><%= officer_check_in.check_in_date %></td>
+        <td><%= link_to 'Show', officer_check_in %></td>
+        <td><%= link_to 'Edit', edit_officer_check_in_path(officer_check_in) %></td>
+        <td><%= link_to 'Destroy', officer_check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Officer Check In', new_officer_check_in_path %>
