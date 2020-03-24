@@ -1,6 +1,13 @@
 class CoordinatorCheckInsController < ApplicationController
   before_action :set_coordinator_check_in, only: [:show, :edit, :update, :destroy]
 
+  def full_name
+    @coordinators = Coordinator.first_name + Coordinator.last_name
+  end
+
+  def event_name
+    @events = Event.category + Event.event_date
+  end
   # GET /coordinator_check_ins
   # GET /coordinator_check_ins.json
   def index

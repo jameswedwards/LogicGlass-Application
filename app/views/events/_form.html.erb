@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :sponsor_id %>
-    <%= form.collection_select :sponsor_id, Sponsor.all, :id, :first_name, :last_name %>
+    <%= form.collection_select :sponsor_id, Sponsor.all, :id, :full_name %>
   </div>
 
   <div class="field">

@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def full_name
+    @sponsors = Sponsor.first_name + Sponsor.last_name
+  end
   # GET /events
   # GET /events.json
   def index

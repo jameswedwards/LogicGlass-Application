@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'check_in_menu/index'
   get 'reports/index'
   resources :coordinator_check_ins
   resources :coordinators
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get "", to: "welcome#index", as: "home"
   get "/reports", to: "reports#index", as: "reports"
+  get "/check_in_menu", to: "check_in_menu#index", as: "check_in_menu"
 end
