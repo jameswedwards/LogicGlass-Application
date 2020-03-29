@@ -17,7 +17,7 @@
       <tr>
         <td><%= member_check_in.member_id %></td>
         <td><%= member_check_in.event_id %></td>
-        <td><%= member_check_in.check_in_date %></td>
+        <td><%= member_check_in.check_in_date.strftime("%I:%M %p") %></td>
         <td><%= link_to 'Show', member_check_in %></td>
         <td><%= link_to 'Edit', edit_member_check_in_path(member_check_in) %></td>
         <td><%= link_to 'Destroy', member_check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>

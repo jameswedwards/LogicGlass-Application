@@ -17,7 +17,7 @@
       <tr>
         <td><%= coordinator_check_in.coordinator_id %></td>
         <td><%= coordinator_check_in.event_id %></td>
-        <td><%= coordinator_check_in.check_in_date %></td>
+        <td><%= coordinator_check_in.check_in_date.strftime("%I:%M %p") %></td>
         <td><%= link_to 'Show', coordinator_check_in %></td>
         <td><%= link_to 'Edit', edit_coordinator_check_in_path(coordinator_check_in) %></td>
         <td><%= link_to 'Destroy', coordinator_check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Check in date:</strong>
-  <%= @member_check_in.check_in_date %>
+  <%= @member_check_in.check_in_date.strftime("%I:%M %p") %>
 </p>
 
 <%= link_to 'Edit', edit_member_check_in_path(@member_check_in) %> |

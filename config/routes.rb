@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :coordinator_positions
   resources :coordinator_statuses
   resources :officer_positions
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   resources :states
   resources :countries
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'welcome#index'
+  root to: 'welcome#index'
   get "", to: "welcome#index", as: "home"
   get "/reports", to: "reports#index", as: "reports"
   get "/check_in_menu", to: "check_in_menu#index", as: "check_in_menu"

@@ -7,6 +7,8 @@ ruby '2.7.0'
 gem 'rails', '~> 6.0.1'
 # PostgreSQL
 gem 'pg'
+# Login Authentication
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.3'
 # Use SCSS for stylesheets

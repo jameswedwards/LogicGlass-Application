@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :event_date %>
-    <%= form.datetime_select :event_date, :start_year => Date.current.year, :end_year => 1920 %>
+    <%= form.datetime_select :event_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true %>
   </div>
 
   <div class="field">
