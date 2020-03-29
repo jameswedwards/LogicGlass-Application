@@ -1,0 +1,2 @@
+module CoordinatorPositionsHelper
+end

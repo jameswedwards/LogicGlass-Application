@@ -72,6 +72,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :member_status_id %>
+    <%= form.collection_select :member_status_id, MemberStatus.all, :id, :status %>
+  </div>
+
+  <div class="field">
     <%= form.label :payment %>
     <%= form.check_box :payment %>
   </div>

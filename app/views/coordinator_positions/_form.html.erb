@@ -1,0 +1,27 @@
+<%= form_with(model: coordinator_position, local: true) do |form| %>
+  <% if coordinator_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coordinator_position.errors.count, "error") %> prohibited this coordinator_position from being saved:</h2>
+
+      <ul>
+        <% coordinator_position.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

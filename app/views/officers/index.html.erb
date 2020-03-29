@@ -18,6 +18,7 @@
       <th>Country</th>
       <th>Home phone</th>
       <th>Mobile phone</th>
+      <th>Officer Status</th>
       <th>Payment</th>
       <th>Student class</th>
       <th>Major</th>
@@ -29,7 +30,7 @@
     <% @officers.each do |officer| %>
       <tr>
         <td><%= officer.peoplesoft_id %></td>
-        <td><%= officer.position %></td>
+        <td><%= officer.officer_position_id %></td>
         <td><%= officer.first_name %></td>
         <td><%= officer.middle_initial %></td>
         <td><%= officer.last_name %></td>
@@ -41,6 +42,7 @@
         <td><%= officer.country_id %></td>
         <td><%= officer.home_phone %></td>
         <td><%= officer.mobile_phone %></td>
+        <td><%= officer.officer_status_id %></td>
         <td><%= officer.payment %></td>
         <td><%= officer.student_class_id %></td>
         <td><%= officer.major %></td>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @coordinator_status.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @coordinator_status.description %>
+</p>
+
+<%= link_to 'Edit', edit_coordinator_status_path(@coordinator_status) %> |
+<%= link_to 'Back', coordinator_statuses_path %>

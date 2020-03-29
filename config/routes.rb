@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :coordinator_positions
+  resources :coordinator_statuses
+  resources :officer_positions
+  resources :officer_statuses
+  resources :member_statuses
   get 'check_in_menu/index'
   get 'reports/index'
   resources :coordinator_check_ins

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @officer_position.position %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @officer_position.description %>
+</p>
+
+<%= link_to 'Edit', edit_officer_position_path(@officer_position) %> |
+<%= link_to 'Back', officer_positions_path %>

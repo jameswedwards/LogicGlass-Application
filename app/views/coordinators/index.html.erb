@@ -18,6 +18,7 @@
       <th>Country</th>
       <th>Home phone</th>
       <th>Mobile phone</th>
+      <th>Coordinator status</th>
       <th>Payment</th>
       <th>Student class</th>
       <th>Major</th>
@@ -29,7 +30,7 @@
     <% @coordinators.each do |coordinator| %>
       <tr>
         <td><%= coordinator.peoplesoft_id %></td>
-        <td><%= coordinator.position %></td>
+        <td><%= coordinator.coordinator_position_id %></td>
         <td><%= coordinator.first_name %></td>
         <td><%= coordinator.middle_initial %></td>
         <td><%= coordinator.last_name %></td>
@@ -41,6 +42,7 @@
         <td><%= coordinator.country_id %></td>
         <td><%= coordinator.home_phone %></td>
         <td><%= coordinator.mobile_phone %></td>
+        <td><%= coordinator.coordinator_status_id %></td>
         <td><%= coordinator.payment %></td>
         <td><%= coordinator.student_class_id %></td>
         <td><%= coordinator.major %></td>

@@ -69,6 +69,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:peoplesoft_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :payment, :student_class_id, :major)
+      params.require(:member).permit(:peoplesoft_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :member_status_id, :payment, :student_class_id, :major)
     end
 end

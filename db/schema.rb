@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_182411) do
+ActiveRecord::Schema.define(version: 2020_03_29_010129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,22 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.index ["event_id"], name: "index_coordinator_check_ins_on_event_id"
   end
 
+  create_table "coordinator_positions", force: :cascade do |t|
+    t.string "position"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coordinator_statuses", force: :cascade do |t|
+    t.string "status"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "coordinators", force: :cascade do |t|
     t.integer "peoplesoft_id"
-    t.string "position"
     t.string "first_name"
     t.string "middle_initial"
     t.string "last_name"
@@ -44,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "coordinator_position_id", null: false
+    t.index ["coordinator_position_id"], name: "index_coordinators_on_coordinator_position_id"
     t.index ["country_id"], name: "index_coordinators_on_country_id"
     t.index ["state_id"], name: "index_coordinators_on_state_id"
     t.index ["student_class_id"], name: "index_coordinators_on_student_class_id"
@@ -103,6 +118,13 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.index ["member_id"], name: "index_member_check_ins_on_member_id"
   end
 
+  create_table "member_statuses", force: :cascade do |t|
+    t.string "status"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.integer "peoplesoft_id"
     t.string "first_name"
@@ -121,7 +143,9 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "member_status_id", null: false
     t.index ["country_id"], name: "index_members_on_country_id"
+    t.index ["member_status_id"], name: "index_members_on_member_status_id"
     t.index ["state_id"], name: "index_members_on_state_id"
     t.index ["student_class_id"], name: "index_members_on_student_class_id"
   end
@@ -136,9 +160,22 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.index ["officer_id"], name: "index_officer_check_ins_on_officer_id"
   end
 
+  create_table "officer_positions", force: :cascade do |t|
+    t.string "position"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "officer_statuses", force: :cascade do |t|
+    t.string "status"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "officers", force: :cascade do |t|
     t.integer "peoplesoft_id"
-    t.string "position"
     t.string "first_name"
     t.string "middle_initial"
     t.string "last_name"
@@ -155,7 +192,11 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "officer_status_id", null: false
+    t.bigint "officer_position_id", null: false
     t.index ["country_id"], name: "index_officers_on_country_id"
+    t.index ["officer_position_id"], name: "index_officers_on_officer_position_id"
+    t.index ["officer_status_id"], name: "index_officers_on_officer_status_id"
     t.index ["state_id"], name: "index_officers_on_state_id"
     t.index ["student_class_id"], name: "index_officers_on_student_class_id"
   end
@@ -196,6 +237,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
 
   add_foreign_key "coordinator_check_ins", "coordinators"
   add_foreign_key "coordinator_check_ins", "events"
+  add_foreign_key "coordinators", "coordinator_positions"
   add_foreign_key "coordinators", "countries"
   add_foreign_key "coordinators", "states"
   add_foreign_key "coordinators", "student_classes"
@@ -207,11 +249,14 @@ ActiveRecord::Schema.define(version: 2020_03_23_182411) do
   add_foreign_key "member_check_ins", "events"
   add_foreign_key "member_check_ins", "members"
   add_foreign_key "members", "countries"
+  add_foreign_key "members", "member_statuses"
   add_foreign_key "members", "states"
   add_foreign_key "members", "student_classes"
   add_foreign_key "officer_check_ins", "events"
   add_foreign_key "officer_check_ins", "officers"
   add_foreign_key "officers", "countries"
+  add_foreign_key "officers", "officer_positions"
+  add_foreign_key "officers", "officer_statuses"
   add_foreign_key "officers", "states"
   add_foreign_key "officers", "student_classes"
   add_foreign_key "sponsors", "sponsor_types"

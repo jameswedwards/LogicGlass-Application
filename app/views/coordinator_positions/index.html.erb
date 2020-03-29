@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coordinator Positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coordinator_positions.each do |coordinator_position| %>
+      <tr>
+        <td><%= coordinator_position.position %></td>
+        <td><%= coordinator_position.description %></td>
+        <td><%= link_to 'Show', coordinator_position %></td>
+        <td><%= link_to 'Edit', edit_coordinator_position_path(coordinator_position) %></td>
+        <td><%= link_to 'Destroy', coordinator_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coordinator Position', new_coordinator_position_path %>
