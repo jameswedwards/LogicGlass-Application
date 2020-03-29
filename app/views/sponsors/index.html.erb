@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Company</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Home phone</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @sponsors.each do |sponsor| %>
       <tr>
+        <td><%= sponsor.company %></td>
         <td><%= sponsor.first_name %></td>
         <td><%= sponsor.last_name %></td>
         <td><%= sponsor.home_phone %></td>

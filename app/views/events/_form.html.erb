@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :event_date %>
-    <%= form.datetime_select :event_date %>
+    <%= form.datetime_select :event_date, :start_year => Date.current.year, :end_year => 1920 %>
   </div>
 
   <div class="field">
@@ -39,11 +39,6 @@
   <div class="field">
     <%= form.label :fee %>
     <%= form.text_field :fee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
   </div>
 
   <div class="field">

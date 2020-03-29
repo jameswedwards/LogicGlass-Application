@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_010129) do
+ActiveRecord::Schema.define(version: 2020_03_29_013833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(version: 2020_03_29_010129) do
     t.bigint "event_status_id", null: false
     t.bigint "sponsor_id", null: false
     t.decimal "fee"
-    t.string "category"
     t.string "address"
     t.string "building_name"
     t.string "city"
@@ -216,6 +215,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_010129) do
     t.bigint "sponsor_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "company"
     t.index ["sponsor_type_id"], name: "index_sponsors_on_sponsor_type_id"
   end
 
