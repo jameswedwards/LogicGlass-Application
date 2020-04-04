@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :officer_id %>
+    <%= form.label :officer_id, class: "required" %>
     <%= form.collection_select :officer_id, Officer.all, :id, :full_name %>
   </div>
 
   <div class="field">
-    <%= form.label :event_id %>
+    <%= form.label :event_id, class: "required" %>
     <%= form.collection_select :event_id, Event.all, :id, :event_name, :selected => Event.last %>
   </div>
 
   <div class="field">
-    <%= form.label :check_in_date %>
-    <%= form.datetime_select :check_in_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true %>
+    <%= form.label :check_in_date, class: "required" %>
+    <%= form.datetime_select :check_in_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true, order: [:month, :day, :year] %>
   </div>
 
   <div class="actions">

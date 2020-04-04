@@ -253,3 +253,19 @@
  .fa-anchor,.fa-coffee {
    font-size:200px
  }
+ label.required:after {content: " *"; color: red;}
+
+div.money{
+  position:relative;
+}
+
+div.money input{
+  padding-left: 15px;
+}
+
+div.money:after{
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  content: '$';
+}

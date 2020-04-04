@@ -11,3 +11,4 @@
 #State.create(country_id: '1', name: "Texas", state_abbreviation: "TX")
 #State.destroy_all
 #Country.destroy_all
+#User.destroy_all

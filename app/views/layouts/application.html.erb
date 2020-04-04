@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    <!-- Navbar -->
     <div class="w3-top">
       <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -19,6 +18,7 @@
         <%= link_to "Members", members_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
         <%= link_to "Officers", officers_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
         <%= link_to "Coordinators", coordinators_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
+        <%= link_to "Sponsors", sponsors_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
         <%= link_to "Reports", reports_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
         <% if current_user %>
         <div style="display: flex; justify-content: flex-end"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %></div>
@@ -27,18 +27,18 @@
         <% end %>
       </div>
 
-      <!-- Navbar on small screens -->
       <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
         <%= link_to "Home", home_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <%= link_to "Events", events_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <%= link_to "Members", members_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <%= link_to "Officers", officers_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <%= link_to "Coordinators", coordinators_path, class: "w3-bar-item w3-button w3-padding-large" %>
+        <%= link_to "Sponsors", sponsors_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <%= link_to "Reports", reports_path, class: "w3-bar-item w3-button w3-padding-large" %>
         <% if current_user %>
-        <div style="display: flex; justify-content: flex-end"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %></div>
+        <div style="display: flex; justify-content: flex-end"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "w3-bar-item w3-button w3-padding-large" %></div>
         <% else %>
-        <div style="display: flex; justify-content: flex-end"><%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %></div>
+        <div style="display: flex; justify-content: flex-end"><%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button w3-padding-large" %></div>
         <% end %>
       </div>
     </div>
