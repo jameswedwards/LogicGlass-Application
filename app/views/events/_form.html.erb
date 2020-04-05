@@ -22,14 +22,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :event_type_id, class: "required" %>
-    <%= form.collection_select :event_type_id, EventType.all, :id, :type %>
+      <%= form.label :event_type_id, class: "required" %>
+      <%= form.collection_select :event_type_id, EventType.all, :id, :type %>
   </div>
 
   <div class="field">
     <%= form.label :event_status_id, class: "required" %>
     <%= form.collection_select :event_status_id, EventStatus.all, :id, :status %>
   </div>
+
 
   <div class="field">
     <%= form.label :sponsor_id, class: "required" %>

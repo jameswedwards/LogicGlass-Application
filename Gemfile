@@ -13,6 +13,12 @@ gem 'devise'
 gem 'validates_zipcode'
 # Phone validation
 gem 'phonelib'
+# Nested Forms
+gem "nested_form"
+# add fields link
+gem 'link_to_add_fields'
+# jquery
+gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.3'
 # Use SCSS for stylesheets

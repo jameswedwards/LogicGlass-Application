@@ -2,6 +2,10 @@ class OfficersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_officer, only: [:show, :edit, :update, :destroy]
 
+  def full_name
+    @officers = Officer.first_name + Officer.middle_initial + Officer.last_name
+  end
+
   # GET /officers
   # GET /officers.json
   def index

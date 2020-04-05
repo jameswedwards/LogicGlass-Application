@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sponsors</h1>
+<h1>Sponsors</h1><br>
 
+<section class="">
+<div class="wrap-table100">
+<div class="table100">
 <table>
   <thead>
-    <tr>
-      <th>Company</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Home phone</th>
-      <th>Mobile phone</th>
-      <th>Sponsor type</th>
+    <tr class="table100-head">
+      <th class="column1">Company</th>
+      <th class="column2">Sponsor name</th>
+      <th class="column3">Home phone</th>
+      <th class="column4">Mobile phone</th>
+      <th class="column5">Sponsor type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,20 +20,19 @@
   <tbody>
     <% @sponsors.each do |sponsor| %>
       <tr>
-        <td><%= sponsor.company %></td>
-        <td><%= sponsor.first_name %></td>
-        <td><%= sponsor.last_name %></td>
-        <td><%= sponsor.home_phone %></td>
-        <td><%= sponsor.mobile_phone %></td>
-        <td><%= sponsor.sponsor_type_id %></td>
-        <td><%= link_to 'Show', sponsor %></td>
-        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
-        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="column1"><%= sponsor.company %></td>
+        <td class="column2"><%= sponsor.full_name %></td>
+        <td class="column3"><%= sponsor.home_phone %></td>
+        <td class="column4"><%= sponsor.mobile_phone %></td>
+        <td class="column5"><%= sponsor.sponsor_type_id %></td>
+        <td class="column6"><%= link_to 'Show', sponsor %></td>
+        <td class="column7"><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+        <td class="column8"><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Sponsor', new_sponsor_path %>
+<%= link_to 'New Sponsor', new_sponsor_path, class: "add" %>
+</div>
+</div>
+</section>

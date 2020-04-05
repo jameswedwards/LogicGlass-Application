@@ -1,27 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Officers</h1>
+<h1>Officers</h1><br>
 
+<section class="">
+<div class="wrap-table100">
+<div class="table100">
 <table>
   <thead>
-    <tr>
-      <th>Peoplesoft</th>
-      <th>Position</th>
-      <th>First name</th>
-      <th>Middle initial</th>
-      <th>Last name</th>
-      <th>Date of birth</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Zip</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Home phone</th>
-      <th>Mobile phone</th>
-      <th>Officer Status</th>
-      <th>Payment</th>
-      <th>Student class</th>
-      <th>Major</th>
+    <tr class="table100-head">
+      <th class="column1">Peoplesoft</th>
+      <th class="column2">Position</th>
+      <th class="column3">Full name</th>
+      <th class="column4">Student class</th>
+      <th class="column5">Major</th>
+      <th class="column6">Paid</th>
+      <th class="column7">Officer Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,31 +22,21 @@
   <tbody>
     <% @officers.each do |officer| %>
       <tr>
-        <td><%= officer.peoplesoft_id %></td>
-        <td><%= officer.officer_position_id %></td>
-        <td><%= officer.first_name %></td>
-        <td><%= officer.middle_initial %></td>
-        <td><%= officer.last_name %></td>
-        <td><%= officer.date_of_birth %></td>
-        <td><%= officer.address %></td>
-        <td><%= officer.city %></td>
-        <td><%= officer.zip %></td>
-        <td><%= officer.state_id %></td>
-        <td><%= officer.country_id %></td>
-        <td><%= officer.home_phone %></td>
-        <td><%= officer.mobile_phone %></td>
-        <td><%= officer.officer_status_id %></td>
-        <td><%= officer.payment %></td>
-        <td><%= officer.student_class_id %></td>
-        <td><%= officer.major %></td>
-        <td><%= link_to 'Show', officer %></td>
-        <td><%= link_to 'Edit', edit_officer_path(officer) %></td>
-        <td><%= link_to 'Destroy', officer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="column1"><%= officer.peoplesoft_id %></td>
+        <td class="column2"><%= officer.officer_position_id %></td>
+        <td class="column3"><%= officer.full_name %></td>
+        <td class="column4"><%= officer.student_class_id %></td>
+        <td class="column5"><%= officer.major %></td>
+        <td class="column6"><%= officer.payment %></td>
+        <td class="column7"><%= officer.officer_status_id %></td>
+        <td class="column8"><%= link_to 'Show', officer %></td>
+        <td class="column9"><%= link_to 'Edit', edit_officer_path(officer) %></td>
+        <td class="column10"><%= link_to 'Destroy', officer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Officer', new_officer_path %>
+<%= link_to 'New Officer', new_officer_path, class: "add" %>
+</div>
+</div>
+</section>

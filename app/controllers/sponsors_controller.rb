@@ -1,6 +1,10 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
 
+  def full_name
+    @sponsors = Sponsor.first_name + Sponsor.last_name
+  end
+
   # GET /sponsors
   # GET /sponsors.json
   def index

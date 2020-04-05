@@ -1,9 +1,16 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def full_name
     @sponsors = Sponsor.first_name + Sponsor.last_name
   end
+
+  def new
+   @event = Event.new
+   @event.build_event_type
+  end
+
   # GET /events
   # GET /events.json
   def index
@@ -72,6 +79,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:description, :event_date, :event_type_id, :event_status_id, :sponsor_id, :fee, :address, :building_name, :city, :zip, :state_id, :country_id)
+      params.require(:event).permit(:description, :event_date, :event_type_id, :event_status_id, :sponsor_id, :fee, :address, :building_name, :city, :zip, :state_id, :country_id, event_type_attributes: [:id, :type, :description, :_destroy])
     end
 end

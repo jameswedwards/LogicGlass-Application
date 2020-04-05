@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: '2')
 
 #Example: This is one row inserted into the Country table
-#Country.create(name: "United States", country_abbreviation: "USA")
-#State.create(country_id: '1', name: "Texas", state_abbreviation: "TX")
-#State.destroy_all
-#Country.destroy_all
+Country.destroy_all
+#Country.create!(name: "United States", country_abbreviation: "US")
+State.destroy_all
+#State.create!(country_id: '1', name: "Texas", state_abbreviation: "TX")
 #User.destroy_all

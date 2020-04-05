@@ -1,26 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Members</h1>
+<h1>Members</h1><br>
 
+<section class="">
+<div class="wrap-table100">
+<div class="table100">
 <table>
   <thead>
-    <tr>
-      <th>Peoplesoft</th>
-      <th>First name</th>
-      <th>Middle initial</th>
-      <th>Last name</th>
-      <th>Date of birth</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Zip</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Home phone</th>
-      <th>Mobile phone</th>
-      <th>Member Status</th>
-      <th>Payment</th>
-      <th>Student class</th>
-      <th>Major</th>
+    <tr class="table100-head">
+      <th class="column1">Peoplesoft</th>
+      <th class="column2">Full name</th>
+      <th class="column3">Student class</th>
+      <th class="column4">Major</th>
+      <th class="column5">Paid</th>
+      <th class="column6">Member Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,30 +21,20 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= member.peoplesoft_id %></td>
-        <td><%= member.first_name %></td>
-        <td><%= member.middle_initial %></td>
-        <td><%= member.last_name %></td>
-        <td><%= member.date_of_birth %></td>
-        <td><%= member.address %></td>
-        <td><%= member.city %></td>
-        <td><%= member.zip %></td>
-        <td><%= member.state_id %></td>
-        <td><%= member.country_id %></td>
-        <td><%= member.home_phone %></td>
-        <td><%= member.mobile_phone %></td>
-        <td><%= member.member_status_id %></td>
-        <td><%= member.payment %></td>
-        <td><%= member.student_class_id %></td>
-        <td><%= member.major %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="column1"><%= member.peoplesoft_id %></td>
+        <td class="column2"><%= member.full_name %></td>
+        <td class="column3"><%= member.student_class_id %></td>
+        <td class="column4"><%= member.major %></td>
+        <td class="column5"><%= member.payment %></td>
+        <td class="column6"><%= member.member_status_id %></td>
+        <td class="column7"><%= link_to 'Show', member %></td>
+        <td class="column8"><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td class="column9"><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Member', new_member_path %>
+<%= link_to 'New Member', new_member_path, class: "add" %>
+</div>
+</div>
+</section>
