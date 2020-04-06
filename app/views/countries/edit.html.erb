@@ -3,4 +3,5 @@
 <%= render 'form', country: @country %>
 
 <%= link_to 'Show', @country %> |
+<%= link_to 'Destroy', @country, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this country' } %> |
 <%= link_to 'Back', countries_path %>

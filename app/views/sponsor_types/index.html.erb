@@ -17,8 +17,7 @@
         <td><%= sponsor_type.sponsor_type %></td>
         <td><%= sponsor_type.description %></td>
         <td><%= link_to 'View Type', sponsor_type, class: "show" %></td>
-        <td><%= link_to 'Edit', edit_sponsor_type_path(sponsor_type) %></td>
-        <td><%= link_to 'Destroy', sponsor_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Type', edit_sponsor_type_path(sponsor_type), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

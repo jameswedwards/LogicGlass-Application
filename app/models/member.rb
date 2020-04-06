@@ -3,7 +3,7 @@ class Member < ApplicationRecord
   belongs_to :country
   belongs_to :student_class
   belongs_to :member_status
-  has_many :member_check_ins
+  has_many :member_check_ins, dependent: :destroy
   def full_name
   "#{first_name} #{last_name}"
   end

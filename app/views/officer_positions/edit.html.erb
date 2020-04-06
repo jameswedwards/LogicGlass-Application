@@ -3,4 +3,5 @@
 <%= render 'form', officer_position: @officer_position %>
 
 <%= link_to 'Show', @officer_position %> |
+<%= link_to 'Destroy', @officer_position, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with officers assigned to this position' } %> |
 <%= link_to 'Back', officer_positions_path %>

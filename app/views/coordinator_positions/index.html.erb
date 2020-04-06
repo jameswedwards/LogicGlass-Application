@@ -17,8 +17,7 @@
         <td><%= coordinator_position.position %></td>
         <td><%= coordinator_position.description %></td>
         <td><%= link_to 'View Position', coordinator_position, class: "show" %></td>
-        <td><%= link_to 'Edit', edit_coordinator_position_path(coordinator_position) %></td>
-        <td><%= link_to 'Destroy', coordinator_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Position', edit_coordinator_position_path(coordinator_position), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

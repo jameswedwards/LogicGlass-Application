@@ -30,8 +30,7 @@
         <td class="column6"><%= coordinator.payment %></td>
         <td class="column7"><%= coordinator.coordinator_status.status %></td>
         <td class="column8"><%= link_to 'View Contact', coordinator, class: "show" %></td>
-        <td class="column9"><%= link_to 'Edit', edit_coordinator_path(coordinator) %></td>
-        <td class="column10"><%= link_to 'Destroy', coordinator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="column9"><%= link_to 'Edit Contact', edit_coordinator_path(coordinator), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -4,7 +4,7 @@ class Officer < ApplicationRecord
   belongs_to :student_class
   belongs_to :officer_status
   belongs_to :officer_position
-  has_many :officer_check_ins
+  has_many :officer_check_ins, dependent: :destroy
   def full_name
   "#{first_name} #{last_name}"
   end

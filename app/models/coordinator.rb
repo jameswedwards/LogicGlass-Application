@@ -4,7 +4,7 @@ class Coordinator < ApplicationRecord
   belongs_to :student_class
   belongs_to :coordinator_status
   belongs_to :coordinator_position
-  has_many :coordinator_check_ins
+  has_many :coordinator_check_ins, dependent: :destroy
   def full_name
   "#{first_name} #{last_name}"
   end

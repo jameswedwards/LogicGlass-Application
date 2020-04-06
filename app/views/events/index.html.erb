@@ -39,9 +39,8 @@
         <td class="column10"><%= event.zip %></td>
         <td class="column11"><%= event.state.name %></td>
         <td class="column12"><%= event.country.name %></td>
-        <td class="column13"><%= link_to 'View Event Info', event, class: "show" %></td>
-        <td class="column14"><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td class="column15"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="column13"><%= link_to 'View Event', event, class: "show" %></td>
+        <td class="column14"><%= link_to 'Edit Event', edit_event_path(event), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

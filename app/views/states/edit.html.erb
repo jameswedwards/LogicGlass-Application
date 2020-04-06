@@ -3,4 +3,5 @@
 <%= render 'form', state: @state %>
 
 <%= link_to 'Show', @state %> |
+<%= link_to 'Destroy', @state, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this state' } %> |
 <%= link_to 'Back', states_path %>

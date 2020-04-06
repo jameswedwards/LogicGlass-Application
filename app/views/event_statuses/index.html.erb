@@ -17,8 +17,7 @@
         <td><%= event_status.status %></td>
         <td><%= event_status.description %></td>
         <td><%= link_to 'View Status', event_status, class: "show" %></td>
-        <td><%= link_to 'Edit', edit_event_status_path(event_status) %></td>
-        <td><%= link_to 'Destroy', event_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Status', edit_event_status_path(event_status), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,4 +3,5 @@
 <%= render 'form', event_status: @event_status %>
 
 <%= link_to 'Show', @event_status %> |
+<%= link_to 'Destroy', @event_status, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with events assigned to this status' } %> |
 <%= link_to 'Back', event_statuses_path %>

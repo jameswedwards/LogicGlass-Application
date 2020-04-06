@@ -1,6 +1,6 @@
 class Sponsor < ApplicationRecord
   belongs_to :sponsor_type
-  has_many :events
+  has_many :events, dependent: :destroy
   def full_name
   "#{first_name} #{last_name}"
   end

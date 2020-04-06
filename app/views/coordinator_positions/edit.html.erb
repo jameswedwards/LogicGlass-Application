@@ -3,4 +3,5 @@
 <%= render 'form', coordinator_position: @coordinator_position %>
 
 <%= link_to 'Show', @coordinator_position %> |
+<%= link_to 'Destroy', @coordinator_position, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with coordinators assigned to this position' } %> |
 <%= link_to 'Back', coordinator_positions_path %>

@@ -3,4 +3,5 @@
 <%= render 'form', student_class: @student_class %>
 
 <%= link_to 'Show', @student_class %> |
+<%= link_to 'Destroy', @student_class, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this student class' } %> |
 <%= link_to 'Back', student_classes_path %>

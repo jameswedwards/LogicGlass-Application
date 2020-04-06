@@ -17,8 +17,7 @@
         <td><%= officer_status.status %></td>
         <td><%= officer_status.description %></td>
         <td><%= link_to 'View Status', officer_status, class: "show" %></td>
-        <td><%= link_to 'Edit', edit_officer_status_path(officer_status) %></td>
-        <td><%= link_to 'Destroy', officer_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Status', edit_officer_status_path(officer_status), class: "show" %></td>
       </tr>
     <% end %>
   </tbody>
