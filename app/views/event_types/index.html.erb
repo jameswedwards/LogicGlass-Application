@@ -14,9 +14,9 @@
   <tbody>
     <% @event_types.each do |event_type| %>
       <tr>
-        <td><%= event_type.type %></td>
+        <td><%= event_type.event_type %></td>
         <td><%= event_type.description %></td>
-        <td><%= link_to 'Show', event_type %></td>
+        <td><%= link_to 'View Type', event_type, class: "show" %></td>
         <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
         <td><%= link_to 'Destroy', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

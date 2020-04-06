@@ -18,10 +18,10 @@
   <tbody>
     <% @coordinator_check_ins.each do |coordinator_check_in| %>
       <tr>
-        <td class="column1"><%= coordinator_check_in.coordinator_id %></td>
-        <td class="column2"><%= coordinator_check_in.event_id %></td>
+        <td class="column1"><%= coordinator_check_in.coordinator.full_name %></td>
+        <td class="column2"><%= coordinator_check_in.event.description %></td>
         <td class="column3"><%= coordinator_check_in.check_in_date.strftime("%I:%M %p") %></td>
-        <td class="column4"><%= link_to 'Show', coordinator_check_in %></td>
+        <td class="column4"><%= link_to 'View', coordinator_check_in, class: "show" %></td>
         <td class="column5"><%= link_to 'Edit', edit_coordinator_check_in_path(coordinator_check_in) %></td>
         <td class="column6"><%= link_to 'Destroy', coordinator_check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

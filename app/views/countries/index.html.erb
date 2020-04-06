@@ -19,7 +19,7 @@
       <tr>
         <td class="column1"><%= country.name %></td>
         <td class="column2"><%= country.country_abbreviation %></td>
-        <td class="column3"><%= link_to 'Show', country %></td>
+        <td class="column3"><%= link_to 'View Country', country, class: "show" %></td>
         <td class="column4"><%= link_to 'Edit', edit_country_path(country) %></td>
         <td class="column5"><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

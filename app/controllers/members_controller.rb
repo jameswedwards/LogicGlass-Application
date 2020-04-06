@@ -2,9 +2,6 @@ class MembersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
-  def full_name
-    @members = Member.first_name + Member.middle_initial + Member.last_name
-  end
 
   # GET /members
   # GET /members.json

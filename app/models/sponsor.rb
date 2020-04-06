@@ -1,6 +1,9 @@
 class Sponsor < ApplicationRecord
   belongs_to :sponsor_type
   has_many :events
+  def full_name
+  "#{first_name} #{last_name}"
+  end
   validates :company, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :first_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :last_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true

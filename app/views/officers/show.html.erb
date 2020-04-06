@@ -7,7 +7,7 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @officer.officer_position_id %>
+  <%= @officer.officer_position.position %>
 </p>
 
 <p>
@@ -47,12 +47,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @officer.state_id %>
+  <%= @officer.state.name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @officer.country_id %>
+  <%= @officer.country.name %>
 </p>
 
 <p>
@@ -67,7 +67,7 @@
 
 <p>
   <strong>Officer status:</strong>
-  <%= @officer.officer_status_id %>
+  <%= @officer.officer_status.status %>
 </p>
 
 <p>
@@ -77,7 +77,7 @@
 
 <p>
   <strong>Student class:</strong>
-  <%= @officer.student_class_id %>
+  <%= @officer.student_class.student_class %>
 </p>
 
 <p>

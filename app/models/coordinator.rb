@@ -5,6 +5,9 @@ class Coordinator < ApplicationRecord
   belongs_to :coordinator_status
   belongs_to :coordinator_position
   has_many :coordinator_check_ins
+  def full_name
+  "#{first_name} #{last_name}"
+  end
   validates :peoplesoft_id, :format => { :with => /^[0-9]*$/ , :message => "Only numbers allowed", :multiline => true }, length: { is: 7 }, :presence => true
   validates :first_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :middle_initial, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only a letter allowed", :multiline => true }, length: { is: 1 }, :presence => true

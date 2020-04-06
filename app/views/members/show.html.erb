@@ -42,12 +42,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @member.state_id %>
+  <%= @member.state.name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @member.country_id %>
+  <%= @member.country.name %>
 </p>
 
 <p>
@@ -62,7 +62,7 @@
 
 <p>
   <strong>Member status:</strong>
-  <%= @officer.member_status_id %>
+  <%= @member.member_status.status %>
 </p>
 
 <p>
@@ -72,7 +72,7 @@
 
 <p>
   <strong>Student class:</strong>
-  <%= @member.student_class_id %>
+  <%= @member.student_class.student_class %>
 </p>
 
 <p>

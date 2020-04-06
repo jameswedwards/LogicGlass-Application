@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :sponsor_type_id, class: "required" %>
-    <%= form.collection_select :sponsor_type_id, SponsorType.all, :id, :type %>
+    <%= form.collection_select :sponsor_type_id, SponsorType.all, :id, :sponsor_type %>
   </div>
 
   <div class="actions">

@@ -2,9 +2,6 @@ class CoordinatorsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_coordinator, only: [:show, :edit, :update, :destroy]
 
-  def full_name
-    @coordinators = Coordinator.first_name + Coordinator.middle_initial + Coordinator.last_name
-  end
 
   # GET /coordinators
   # GET /coordinators.json

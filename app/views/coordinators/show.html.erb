@@ -7,7 +7,7 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @coordinator.coordinator_position_id %>
+  <%= @coordinator.coordinator_position.position %>
 </p>
 
 <p>
@@ -47,12 +47,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @coordinator.state_id %>
+  <%= @coordinator.state.name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @coordinator.country_id %>
+  <%= @coordinator.country.name %>
 </p>
 
 <p>
@@ -67,7 +67,7 @@
 
 <p>
   <strong>Coordinator status:</strong>
-  <%= @coordinator.coordinator_status_id %>
+  <%= @coordinator.coordinator_status.status %>
 </p>
 
 <p>
@@ -77,7 +77,7 @@
 
 <p>
   <strong>Student class:</strong>
-  <%= @coordinator.student_class_id %>
+  <%= @coordinator.student_class.student_class %>
 </p>
 
 <p>

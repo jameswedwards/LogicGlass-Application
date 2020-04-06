@@ -2,16 +2,16 @@
 
 <p>
   <strong>Officer:</strong>
-  <%= @officer_check_in.officer_id %>
+  <%= @officer_check_in.officer.full_name %>
 </p>
 
 <p>
   <strong>Event:</strong>
-  <%= @officer_check_in.event_id %>
+  <%= @officer_check_in.event.description %>
 </p>
 
 <p>
-  <strong>Check in date:</strong>
+  <strong>Check in time:</strong>
   <%= @officer_check_in.check_in_date.strftime("%I:%M %p") %>
 </p>
 

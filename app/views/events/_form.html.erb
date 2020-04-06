@@ -23,7 +23,7 @@
 
   <div class="field">
       <%= form.label :event_type_id, class: "required" %>
-      <%= form.collection_select :event_type_id, EventType.all, :id, :type %>
+      <%= form.collection_select :event_type_id, EventType.all, :id, :event_type %>
   </div>
 
   <div class="field">
@@ -39,7 +39,7 @@
 
   <div class="field">
     <%= form.label :fee %>
-    <div class="money"><%= form.text_field :fee, :size=>"4" %></div>
+    <div class="money"><%= form.text_field :fee, :size=>"4", :value => (number_with_precision(form.object.fee, :precision => 2) || 0) %></div>
   </div>
 
   <div class="field">

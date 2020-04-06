@@ -14,9 +14,9 @@
   <tbody>
     <% @student_classes.each do |student_class| %>
       <tr>
-        <td><%= student_class.class %></td>
+        <td><%= student_class.student_class %></td>
         <td><%= student_class.description %></td>
-        <td><%= link_to 'Show', student_class %></td>
+        <td><%= link_to 'View Class', student_class, class: "show" %></td>
         <td><%= link_to 'Edit', edit_student_class_path(student_class) %></td>
         <td><%= link_to 'Destroy', student_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

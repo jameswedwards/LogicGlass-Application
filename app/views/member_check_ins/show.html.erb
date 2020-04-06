@@ -2,16 +2,16 @@
 
 <p>
   <strong>Member:</strong>
-  <%= @member_check_in.member_id %>
+  <%= @member_check_in.member.full_name %>
 </p>
 
 <p>
   <strong>Event:</strong>
-  <%= @member_check_in.event_id %>
+  <%= @member_check_in.event.description %>
 </p>
 
 <p>
-  <strong>Check in date:</strong>
+  <strong>Check in time:</strong>
   <%= @member_check_in.check_in_date.strftime("%I:%M %p") %>
 </p>
 

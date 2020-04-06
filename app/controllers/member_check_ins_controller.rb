@@ -1,9 +1,6 @@
 class MemberCheckInsController < ApplicationController
   before_action :set_member_check_in, only: [:show, :edit, :update, :destroy]
 
-  def full_name
-    @members = Member.first_name + Member.last_name
-  end
 
   def event_name
     @events = Event.category + Event.event_date

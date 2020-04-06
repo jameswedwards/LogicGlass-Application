@@ -2,10 +2,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  def full_name
-    @sponsors = Sponsor.first_name + Sponsor.last_name
-  end
-
   def new
    @event = Event.new
    @event.build_event_type

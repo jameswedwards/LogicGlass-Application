@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_070222) do
+ActiveRecord::Schema.define(version: 2020_04_06_055701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,9 @@ ActiveRecord::Schema.define(version: 2020_03_29_070222) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "coordinator_position_id", null: false
+    t.bigint "coordinator_status_id", null: false
     t.index ["coordinator_position_id"], name: "index_coordinators_on_coordinator_position_id"
+    t.index ["coordinator_status_id"], name: "index_coordinators_on_coordinator_status_id"
     t.index ["country_id"], name: "index_coordinators_on_country_id"
     t.index ["state_id"], name: "index_coordinators_on_state_id"
     t.index ["student_class_id"], name: "index_coordinators_on_student_class_id"
@@ -79,10 +81,10 @@ ActiveRecord::Schema.define(version: 2020_03_29_070222) do
   end
 
   create_table "event_types", force: :cascade do |t|
-    t.string "type"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "event_type"
   end
 
   create_table "events", force: :cascade do |t|
@@ -201,10 +203,10 @@ ActiveRecord::Schema.define(version: 2020_03_29_070222) do
   end
 
   create_table "sponsor_types", force: :cascade do |t|
-    t.string "type"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sponsor_type"
   end
 
   create_table "sponsors", force: :cascade do |t|
@@ -229,10 +231,10 @@ ActiveRecord::Schema.define(version: 2020_03_29_070222) do
   end
 
   create_table "student_classes", force: :cascade do |t|
-    t.string "class"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "student_class"
   end
 
   create_table "users", force: :cascade do |t|
@@ -251,6 +253,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_070222) do
   add_foreign_key "coordinator_check_ins", "coordinators"
   add_foreign_key "coordinator_check_ins", "events"
   add_foreign_key "coordinators", "coordinator_positions"
+  add_foreign_key "coordinators", "coordinator_statuses"
   add_foreign_key "coordinators", "countries"
   add_foreign_key "coordinators", "states"
   add_foreign_key "coordinators", "student_classes"

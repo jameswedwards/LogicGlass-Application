@@ -12,22 +12,22 @@
 
 <p>
   <strong>Event type:</strong>
-  <%= @event.event_type_id %>
+  <%= @event.event_type.event_type %>
 </p>
 
 <p>
   <strong>Event status:</strong>
-  <%= @event.event_status_id %>
+  <%= @event.event_status.status %>
 </p>
 
 <p>
   <strong>Sponsor:</strong>
-  <%= @event.sponsor_id %>
+  <%= @event.sponsor.full_name %>
 </p>
 
 <p>
   <strong>Fee:</strong>
-  <%= @event.fee %>
+  <%= number_to_currency(@event.fee) %>
 </p>
 
 <p>
@@ -52,12 +52,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @event.state_id %>
+  <%= @event.state.name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @event.country_id %>
+  <%= @event.country.name %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

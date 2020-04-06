@@ -16,7 +16,7 @@
       <tr>
         <td><%= coordinator_status.status %></td>
         <td><%= coordinator_status.description %></td>
-        <td><%= link_to 'Show', coordinator_status %></td>
+        <td><%= link_to 'View Status', coordinator_status, class: "show" %></td>
         <td><%= link_to 'Edit', edit_coordinator_status_path(coordinator_status) %></td>
         <td><%= link_to 'Destroy', coordinator_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

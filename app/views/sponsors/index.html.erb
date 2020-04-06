@@ -21,11 +21,11 @@
     <% @sponsors.each do |sponsor| %>
       <tr>
         <td class="column1"><%= sponsor.company %></td>
-        <td class="column2"><%= sponsor.full_name %></td>
+        <td class="column2"><%= sponsor.first_name + ' ' + sponsor.last_name %></td>
         <td class="column3"><%= sponsor.home_phone %></td>
         <td class="column4"><%= sponsor.mobile_phone %></td>
-        <td class="column5"><%= sponsor.sponsor_type_id %></td>
-        <td class="column6"><%= link_to 'Show', sponsor %></td>
+        <td class="column5"><%= sponsor.sponsor_type.sponsor_type %></td>
+        <td class="column6"><%= link_to 'View Contact', sponsor, class: "show" %></td>
         <td class="column7"><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
         <td class="column8"><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -2,16 +2,16 @@
 
 <p>
   <strong>Coordinator:</strong>
-  <%= @coordinator_check_in.coordinator_id %>
+  <%= @coordinator_check_in.coordinator.full_name %>
 </p>
 
 <p>
   <strong>Event:</strong>
-  <%= @coordinator_check_in.event_id %>
+  <%= @coordinator_check_in.event.description %>
 </p>
 
 <p>
-  <strong>Check in date:</strong>
+  <strong>Check in time:</strong>
   <%= @coordinator_check_in.check_in_date.strftime("%I:%M %p") %>
 </p>
 

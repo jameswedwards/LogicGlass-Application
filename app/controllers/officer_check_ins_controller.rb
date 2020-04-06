@@ -1,9 +1,6 @@
 class OfficerCheckInsController < ApplicationController
   before_action :set_officer_check_in, only: [:show, :edit, :update, :destroy]
 
-  def full_name
-    @officers = Officer.first_name + Officer.last_name
-  end
 
   def event_name
     @events = Event.category + Event.event_date

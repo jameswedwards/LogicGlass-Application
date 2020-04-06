@@ -16,7 +16,7 @@
       <tr>
         <td><%= officer_position.position %></td>
         <td><%= officer_position.description %></td>
-        <td><%= link_to 'Show', officer_position %></td>
+        <td><%= link_to 'View Position', officer_position, class: "show" %></td>
         <td><%= link_to 'Edit', edit_officer_position_path(officer_position) %></td>
         <td><%= link_to 'Destroy', officer_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
