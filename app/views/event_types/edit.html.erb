@@ -1,3 +1,4 @@
+<div class="background">
 <h1>Editing Event Type</h1>
 
 <%= render 'form', event_type: @event_type %>
@@ -5,3 +6,4 @@
 <%= link_to 'Show', @event_type %> |
 <%= link_to 'Destroy', @event_type, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with events assigned to this type' } %> |
 <%= link_to 'Back', event_types_path %>
+</div>

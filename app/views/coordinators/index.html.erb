@@ -1,10 +1,10 @@
+<div class="background">
 <p id="notice"><%= notice %></p>
 
 <h1>Coordinators</h1><br>
 
 <section class="">
-<div class="wrap-table100">
-<div class="table100">
+<div class="table103">
 <table>
   <thead>
     <tr class="table100-head">
@@ -27,7 +27,11 @@
         <td class="column3"><%= coordinator.coordinator_position.position %></td>
         <td class="column4"><%= coordinator.student_class.student_class %></td>
         <td class="column5"><%= coordinator.major %></td>
-        <td class="column6"><%= coordinator.payment %></td>
+        <td class="column6"><% coordinator.payment %> <% if coordinator.payment == true %>
+            <%= image_tag "check.png", class: "check"%>
+          <% else %>
+            <%= image_tag "cross.png", class: "cross"%>
+          <% end %></td>
         <td class="column7"><%= coordinator.coordinator_status.status %></td>
         <td class="column8"><%= link_to 'View Contact', coordinator, class: "show" %></td>
         <td class="column9"><%= link_to 'Edit Contact', edit_coordinator_path(coordinator), class: "show" %></td>

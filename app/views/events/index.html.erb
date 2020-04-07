@@ -1,9 +1,9 @@
+<div class="background">
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1><br>
 
 <section class="">
-<div class="wrap-table100">
 <div class="table100">
 <table>
   <thead>
@@ -15,7 +15,7 @@
       <th class="column5">Sponsor</th>
       <th class="column6">Fee</th>
       <th class="column7">Address</th>
-      <th class="column8">Building name</th>
+      <th class="column8">Building</th>
       <th class="column9">City</th>
       <th class="column10">Zip</th>
       <th class="column11">State</th>
@@ -28,7 +28,7 @@
     <% @events.each do |event| %>
       <tr>
         <td class="column1"><%= event.description %></td>
-        <td class="column2"><%= event.event_date.strftime("%I:%M %p") %></td>
+        <td class="column2"><%= event.event_date.strftime("%b %e %Y %I:%M %p") %></td>
         <td class="column3"><%= event.event_type.event_type %></td>
         <td class="column4"><%= event.event_status.status %></td>
         <td class="column5"><%= event.sponsor.full_name %></td>

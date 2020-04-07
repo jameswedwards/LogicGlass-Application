@@ -1,10 +1,10 @@
+<div class="background">
 <p id="notice"><%= notice %></p>
 
 <h1>Member Check Ins</h1><br>
 
 <section class="">
-<div class="wrap-table100">
-<div class="table100">
+<div class="table105">
 <table>
   <thead>
     <tr class="table100-head">
@@ -23,7 +23,7 @@
         <td class="column3"><%= member_check_in.check_in_date.strftime("%I:%M %p") %></td>
         <td class="column4"><%= link_to 'View Check In', member_check_in, class: "show" %></td>
         <td class="column5"><%= link_to 'Edit Check In', edit_member_check_in_path(member_check_in), class: "show" %></td>
-        <td class="column6"><%= link_to 'Destroy Check In', member_check_in, method: :delete, data: { confirm: 'Are you sure?' }, class: "show" %></td>
+        <td class="column6"><%= link_to 'Delete', member_check_in, method: :delete, data: { confirm: 'Are you sure?' }, class: "show" %></td>
       </tr>
     <% end %>
   </tbody>

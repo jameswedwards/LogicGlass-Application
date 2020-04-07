@@ -1,3 +1,4 @@
+<div class="background">
 <h1>Editing Member</h1>
 
 <%= render 'form', member: @member %>
@@ -5,3 +6,4 @@
 <%= link_to 'Show', @member %> |
 <%= link_to 'Destroy', @member, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this member' } %> |
 <%= link_to 'Back', members_path %>
+</div>

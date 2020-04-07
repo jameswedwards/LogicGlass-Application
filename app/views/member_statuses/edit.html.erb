@@ -1,3 +1,4 @@
+<div class="background">
 <h1>Editing Member Status</h1>
 
 <%= render 'form', member_status: @member_status %>
@@ -5,3 +6,4 @@
 <%= link_to 'Show', @member_status %> |
 <%= link_to 'Destroy', @member_status, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with members assigned to this status' } %> |
 <%= link_to 'Back', member_statuses_path %>
+</div>

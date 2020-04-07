@@ -52,13 +52,6 @@ button:hover {
 iframe {
 	border: none !important;
 }
-.wrap-table100 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px;
-  overflow-y: auto;
-  height: 800px;
-}
 
 table {
   border-spacing: 1;
@@ -98,7 +91,11 @@ table td.c, table th.c {
 table td.r, table th.r {
   text-align: center;
 }
-
+.table100 {
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .table100-head th{
   font-family: OpenSans-Regular;
@@ -127,7 +124,7 @@ tbody tr:hover {
 }
 
 .column1 {
-  width: 150px;
+  width: 50px;
   padding-left: 40px;
 }
 
@@ -148,10 +145,12 @@ tbody tr:hover {
 }
 
 .column6 {
+	left: -2%;
   width: 50px;
 }
 
 .column7 {
+	left: -0.5%;
   width: 50px;
 }
 
