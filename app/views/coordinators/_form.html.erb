@@ -1,4 +1,5 @@
-<%= form_with(model: coordinator, local: true) do |form| %>
+<div class="coordinator-container">
+<%= form_with(model: coordinator, local: true, html: {class: "coordinator-form"}) do |form| %>
   <% if coordinator.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(coordinator.errors.count, "error") %> prohibited this coordinator from being saved:</h2>
@@ -18,7 +19,13 @@
 
   <div class="field">
     <%= form.label :coordinator_position_id %>
-    <%= form.collection_select :coordinator_position_id, CoordinatorPosition.all, :id, :position %>
+    <%= form.collection_select :coordinator_position_id, CoordinatorPosition.all, :id, :position, {:prompt => 'Select Coordinator Position'} %>
+    <%= form.fields_for :coordinator_position do |p| %>
+      <%= render 'coordinator_position_fields', :f => p %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Coordinator Position', form, :coordinator_position %>
+    </div>
   </div>
 
   <div class="field">
@@ -27,7 +34,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :middle_initial, class: "required" %>
+    <%= form.label :middle_initial %>
     <%= form.text_field :middle_initial, :size=>"1" %>
   </div>
 
@@ -78,7 +85,13 @@
 
   <div class="field">
     <%= form.label :coordinator_status_id, class: "required" %>
-    <%= form.collection_select :coordinator_status_id, CoordinatorStatus.all, :id, :status %>
+    <%= form.collection_select :coordinator_status_id, CoordinatorStatus.all, :id, :status, {:prompt => 'Select Coordinator Status'} %>
+    <%= form.fields_for :coordinator_status do |c| %>
+      <%= render 'coordinator_status_fields', :f => c %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Coordinator Status', form, :coordinator_status %>
+    </div>
   </div>
 
   <div class="field">
@@ -88,7 +101,7 @@
 
   <div class="field">
     <%= form.label :student_class_id, class: "required" %>
-    <%= form.collection_select :student_class_id, StudentClass.all, :id, :student_class %>
+    <%= form.collection_select :student_class_id, StudentClass.all, :id, :student_class, {:prompt => 'Select Student Class'} %>
   </div>
 
   <div class="field">
@@ -100,3 +113,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

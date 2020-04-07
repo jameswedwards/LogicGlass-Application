@@ -7,9 +7,10 @@ class Member < ApplicationRecord
   def full_name
   "#{first_name} #{last_name}"
   end
+  accepts_nested_attributes_for :member_status, reject_if: :all_blank, allow_destroy: true
   validates :peoplesoft_id, :format => { :with => /^[0-9]*$/ , :message => "Only numbers allowed", :multiline => true }, length: { is: 7 }, :presence => true
   validates :first_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
-  validates :middle_initial, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only a letter allowed", :multiline => true }, length: { is: 1 }, :presence => true
+  validates :middle_initial, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only a letter allowed", :multiline => true }, length: { is: 1 }, :allow_blank => true
   validates :last_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :address, length: {maximum: 50}, :presence => true
   validates :city, length: {maximum: 50}, :presence => true

@@ -8,6 +8,7 @@ class Event < ApplicationRecord
   has_many :coordinator_check_ins, dependent: :destroy
   has_many :officer_check_ins, dependent: :destroy
   accepts_nested_attributes_for :event_type, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :event_status, reject_if: :all_blank, allow_destroy: true
   validates :description, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..100 }, :presence => true
   validates :fee, :format => { :with => /^(\d{0,5}\.\d{1,2}|\d{1,5})$/, :message => "Only numbers and up to 2 decimal points allowed", :multiline => true }, :presence => true
   validates :building_name, length: {maximum: 50}, :presence => true

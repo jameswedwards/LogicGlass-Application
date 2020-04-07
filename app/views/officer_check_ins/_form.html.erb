@@ -1,4 +1,5 @@
-<%= form_with(model: officer_check_in, local: true) do |form| %>
+<div class="checkin-container">
+<%= form_with(model: officer_check_in, local: true, html: {class: "checkin-form"}) do |form| %>
   <% if officer_check_in.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(officer_check_in.errors.count, "error") %> prohibited this officer_check_in from being saved:</h2>
@@ -13,7 +14,7 @@
 
   <div class="field">
     <%= form.label :officer_id, class: "required" %>
-    <%= form.collection_select :officer_id, Officer.all, :id, :full_name %>
+    <%= form.collection_select :officer_id, Officer.all, :id, :full_name, {:prompt => 'Select Officer'} %>
   </div>
 
   <div class="field">
@@ -30,3 +31,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

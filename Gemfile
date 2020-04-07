@@ -13,6 +13,8 @@ gem 'devise'
 gem 'validates_zipcode'
 # Phone validation
 gem 'phonelib'
+# Cocoon
+gem 'cocoon'
 # Nested Forms
 gem "nested_form"
 # add fields link

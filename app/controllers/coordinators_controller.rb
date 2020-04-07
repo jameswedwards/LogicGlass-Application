@@ -71,6 +71,6 @@ class CoordinatorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def coordinator_params
-      params.require(:coordinator).permit(:peoplesoft_id, :coordinator_position_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :coordinator_status_id, :payment, :student_class_id, :major)
+      params.require(:coordinator).permit(:peoplesoft_id, :coordinator_position_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :coordinator_status_id, :payment, :student_class_id, :major, coordinator_status_attributes: [:id, :status, :description, :_destroy], coordinator_position_attributes: [:id, :position, :description, :_destroy])
     end
 end

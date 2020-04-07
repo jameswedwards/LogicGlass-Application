@@ -1,4 +1,5 @@
-<%= form_with(model: sponsor, local: true) do |form| %>
+<div class="sponsor-container">
+<%= form_with(model: sponsor, local: true, html: {class: "sponsor-form"}) do |form| %>
   <% if sponsor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
@@ -38,10 +39,17 @@
 
   <div class="field">
     <%= form.label :sponsor_type_id, class: "required" %>
-    <%= form.collection_select :sponsor_type_id, SponsorType.all, :id, :sponsor_type %>
+    <%= form.collection_select :sponsor_type_id, SponsorType.all, :id, :sponsor_type, {:prompt => 'Select Sponsor Type'} %>
+    <%= form.fields_for :sponsor_type do |t| %>
+      <%= render 'sponsor_type_fields', :f => t %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Sponsor Type', form, :sponsor_type %>
+    </div>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>

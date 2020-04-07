@@ -4,6 +4,7 @@ class Sponsor < ApplicationRecord
   def full_name
   "#{first_name} #{last_name}"
   end
+  accepts_nested_attributes_for :sponsor_type, reject_if: :all_blank, allow_destroy: true
   validates :company, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :first_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true
   validates :last_name, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: { in: 2..50 }, :presence => true

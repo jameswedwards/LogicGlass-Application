@@ -200,3 +200,31 @@ section.positioned {
   position:relative;
 	top:1px;
 }
+.member-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.member-container {
+	margin-left: auto;
+	margin-right: auto;
+  width: 50%;
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  background: #F0F0F0;
+  border-radius: 2px;
+  padding: 55px 95px 68px 95px;
+}

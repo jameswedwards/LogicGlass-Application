@@ -71,6 +71,6 @@ class OfficersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def officer_params
-      params.require(:officer).permit(:peoplesoft_id, :officer_position_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :officer_status_id, :payment, :student_class_id, :major)
+      params.require(:officer).permit(:peoplesoft_id, :officer_position_id, :first_name, :middle_initial, :last_name, :date_of_birth, :address, :city, :zip, :state_id, :country_id, :home_phone, :mobile_phone, :officer_status_id, :payment, :student_class_id, :major, officer_status_attributes: [:id, :status, :description, :_destroy], officer_position_attributes: [:id, :position, :description, :_destroy])
     end
 end
