@@ -23,7 +23,10 @@
     <% @officers.each do |officer| %>
       <tr>
         <td class="column1"><%= officer.peoplesoft_id %></td>
-        <td class="column2"><%= officer.first_name + ' ' + officer.middle_initial + '. ' + officer.last_name %></td>
+        <td class="column2"><%= officer.first_name + ' ' %> <% if officer.middle_initial.present? %>
+            <%= officer.middle_initial + '. ' %>
+          <% else %>
+          <% end %> <%= officer.last_name %></td>
         <td class="column3"><%= officer.officer_position.position %></td>
         <td class="column4"><%= officer.student_class.student_class %></td>
         <td class="column5"><%= officer.major %></td>

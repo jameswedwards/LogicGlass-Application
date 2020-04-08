@@ -1,65 +1,68 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="show-box">
+<div class="show-container">
+  <h1>Event</h1><br>
+<ul class="w3-ul w3-xlarge">
+<li>
   <strong>Description:</strong>
   <%= @event.description %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Event date:</strong>
-  <%= @event.event_date.strftime("%I:%M %p") %>
-</p>
+  <%= @event.event_date.strftime("%b %e %Y %I:%M %p") %>
+</li>
 
-<p>
+<li>
   <strong>Event type:</strong>
   <%= @event.event_type.event_type %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Event status:</strong>
   <%= @event.event_status.status %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Sponsor:</strong>
   <%= @event.sponsor.full_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Fee:</strong>
   <%= number_to_currency(@event.fee) %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Address:</strong>
   <%= @event.address %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Building name:</strong>
   <%= @event.building_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>City:</strong>
   <%= @event.city %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Zip:</strong>
   <%= @event.zip %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>State:</strong>
   <%= @event.state.name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Country:</strong>
   <%= @event.country.name %>
-</p>
+</li>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

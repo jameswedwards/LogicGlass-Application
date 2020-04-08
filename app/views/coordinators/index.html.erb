@@ -23,7 +23,10 @@
     <% @coordinators.each do |coordinator| %>
       <tr>
         <td class="column1"><%= coordinator.peoplesoft_id %></td>
-        <td class="column2"><%= coordinator.first_name + ' ' +  coordinator.middle_initial + '. ' + coordinator.last_name %></td>
+        <td class="column2"><%= coordinator.first_name + ' ' %> <% if coordinator.middle_initial.present? %>
+            <%= coordinator.middle_initial + '. ' %>
+          <% else %>
+          <% end %> <%= coordinator.last_name %></td>
         <td class="column3"><%= coordinator.coordinator_position.position %></td>
         <td class="column4"><%= coordinator.student_class.student_class %></td>
         <td class="column5"><%= coordinator.major %></td>

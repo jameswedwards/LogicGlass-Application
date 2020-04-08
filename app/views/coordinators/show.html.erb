@@ -1,91 +1,104 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="show-box">
+<div class="show-container">
+  <h1>Coordinator</h1><br>
+<ul class="w3-ul w3-xlarge">
+<li>
   <strong>Peoplesoft:</strong>
   <%= @coordinator.peoplesoft_id %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Position:</strong>
   <%= @coordinator.coordinator_position.position %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>First name:</strong>
   <%= @coordinator.first_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Middle initial:</strong>
-  <%= @coordinator.middle_initial %>
-</p>
+  <% if @coordinator.middle_initial.present? %>
+  <%= @coordinator.middle_initial + '.' %>
+  <% else %>
+    <%= @coordinator.middle_initial %>
+  <% end %>
+</li>
 
-<p>
+<li>
   <strong>Last name:</strong>
   <%= @coordinator.last_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Date of birth:</strong>
   <%= @coordinator.date_of_birth %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Address:</strong>
   <%= @coordinator.address %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>City:</strong>
   <%= @coordinator.city %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Zip:</strong>
   <%= @coordinator.zip %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>State:</strong>
   <%= @coordinator.state.name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Country:</strong>
   <%= @coordinator.country.name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Home phone:</strong>
   <%= @coordinator.home_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Mobile phone:</strong>
   <%= @coordinator.mobile_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Coordinator status:</strong>
   <%= @coordinator.coordinator_status.status %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Payment:</strong>
-  <%= @coordinator.payment %>
-</p>
+  <% @coordinator.payment %> <% if @coordinator.payment == true %>
+      <%= image_tag "check.png", class: "check"%>
+    <% else %>
+      <%= image_tag "cross.png", class: "cross"%>
+    <% end %>
+</li>
 
-<p>
+<li>
   <strong>Student class:</strong>
   <%= @coordinator.student_class.student_class %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Major:</strong>
   <%= @coordinator.major %>
-</p>
+</li>
 
 <%= link_to 'Edit', edit_coordinator_path(@coordinator) %> |
 <%= link_to 'Back', coordinators_path %>
+</div>
+</div>
 </div>

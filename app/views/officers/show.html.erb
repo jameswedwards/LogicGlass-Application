@@ -1,91 +1,105 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="show-box">
+<div class="show-container">
+  <h1>Officer</h1><br>
+<ul class="w3-ul w3-xlarge">
+<li>
   <strong>Peoplesoft:</strong>
   <%= @officer.peoplesoft_id %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Position:</strong>
   <%= @officer.officer_position.position %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>First name:</strong>
   <%= @officer.first_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Middle initial:</strong>
-  <%= @officer.middle_initial %>
-</p>
+  <% @officer.middle_initial %>
+  <% if @officer.middle_initial.present? %>
+  <%= @officer.middle_initial + '.' %>
+  <% else %>
+    <%= @officer.middle_initial %>
+  <% end %>
+</li>
 
-<p>
+<li>
   <strong>Last name:</strong>
   <%= @officer.last_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Date of birth:</strong>
   <%= @officer.date_of_birth %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Address:</strong>
   <%= @officer.address %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>City:</strong>
   <%= @officer.city %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Zip:</strong>
   <%= @officer.zip %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>State:</strong>
   <%= @officer.state.name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Country:</strong>
   <%= @officer.country.name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Home phone:</strong>
   <%= @officer.home_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Mobile phone:</strong>
   <%= @officer.mobile_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Officer status:</strong>
   <%= @officer.officer_status.status %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Payment:</strong>
-  <%= @officer.payment %>
-</p>
+  <% @officer.payment %> <% if @officer.payment == true %>
+      <%= image_tag "check.png", class: "check"%>
+    <% else %>
+      <%= image_tag "cross.png", class: "cross"%>
+    <% end %>
+</li>
 
-<p>
+<li>
   <strong>Student class:</strong>
   <%= @officer.student_class.student_class %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Major:</strong>
   <%= @officer.major %>
-</p>
+</li>
 
 <%= link_to 'Edit', edit_officer_path(@officer) %> |
 <%= link_to 'Back', officers_path %>
+</div>
+</div>
 </div>

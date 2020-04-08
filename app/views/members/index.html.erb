@@ -21,7 +21,10 @@
     <% @members.each do |member| %>
       <tr>
         <td class="column1"><%= member.peoplesoft_id %></td>
-        <td class="column2"><%= member.first_name + ' ' + member.middle_initial + '. ' + member.last_name %></td>
+        <td class="column2"><%= member.first_name + ' ' %> <% if member.middle_initial.present? %>
+            <%= member.middle_initial + '. ' %>
+          <% else %>
+          <% end %> <%= member.last_name %></td>
         <td class="column3"><%= member.student_class.student_class %></td>
         <td class="column4"><%= member.major %></td>
         <td class="column5"><% member.payment %> <% if member.payment == true %>

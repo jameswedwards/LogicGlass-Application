@@ -1,21 +1,26 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="show-box">
+<div class="show-container">
+  <h1>Member Check In</h1><br>
+<ul class="w3-ul w3-xlarge">
+<li>
   <strong>Member:</strong>
   <%= @member_check_in.member.full_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Event:</strong>
   <%= @member_check_in.event.description %>
-</p>
+</li>
 
-<p>
-  <strong>Check in time:</strong>
+<li>
+  <strong>Check In Time:</strong>
   <%= @member_check_in.check_in_date.strftime("%I:%M %p") %>
-</p>
+</li>
 
 <%= link_to 'Edit', edit_member_check_in_path(@member_check_in) %> |
 <%= link_to 'Back', member_check_ins_path %>
+</div>
+</div>
 </div>

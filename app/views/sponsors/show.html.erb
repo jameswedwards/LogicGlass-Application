@@ -1,36 +1,42 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="show-box">
+<div class="show-container">
+  <h1>Sponsor</h1><br>
+<ul class="w3-ul w3-xlarge">
+<li>
   <strong>Company:</strong>
   <%= @sponsor.company %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>First name:</strong>
   <%= @sponsor.first_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Last name:</strong>
   <%= @sponsor.last_name %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Home phone:</strong>
   <%= @sponsor.home_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Mobile phone:</strong>
   <%= @sponsor.mobile_phone %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Sponsor type:</strong>
   <%= @sponsor.sponsor_type.sponsor_type %>
-</p>
-
+</li>
+<br><br>
 <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
 <%= link_to 'Back', sponsors_path %>
+</ul>
+</div>
+</div>
 </div>
