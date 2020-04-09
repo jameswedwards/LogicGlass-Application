@@ -61,7 +61,12 @@
 
 <li>
   <strong>Home phone:</strong>
+  <% @member.home_phone %>
+  <% if @member.home_phone.present? %>
   <%= @member.home_phone %>
+  <% else %>
+    <%= 'None' %>
+  <% end %>
 </li>
 
 <li>

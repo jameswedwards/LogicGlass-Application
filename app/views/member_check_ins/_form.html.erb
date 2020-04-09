@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= form.label :event_id, class: "required" %>
-    <%= form.collection_select :event_id, Event.all, :id, :description, :selected => Event.last %>
+    <%= form.collection_select :event_id, Event.all, :id, :description, {:prompt => 'Select Event'} %>
   </div>
 
   <div class="field">

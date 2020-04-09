@@ -21,7 +21,12 @@
 
 <li>
   <strong>Home phone:</strong>
+  <% @sponsor.home_phone %>
+  <% if @sponsor.home_phone.present? %>
   <%= @sponsor.home_phone %>
+  <% else %>
+    <%= 'None' %>
+  <% end %>
 </li>
 
 <li>
