@@ -14,4 +14,15 @@ class Event < ApplicationRecord
   validates :building_name, length: {maximum: 50}, :presence => true
   validates :city, length: {maximum: 50}, :presence => true
   validates :zip, zipcode: { country_code: :es }, :presence => true
-end
+  def self.search(search)
+      if search
+       self.joins(:event_type, :sponsor).where(
+         'event_types.event_type LIKE ? OR events.description LIKE ?
+         OR sponsors.first_name LIKE ? OR sponsors.last_name LIKE ?',
+         "%#{search}%", "%#{search}%","%#{search}%","%#{search}%")
+
+      else
+        self.all
+      end
+    end
+  end 

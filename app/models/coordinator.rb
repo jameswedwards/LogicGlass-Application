@@ -20,4 +20,14 @@ class Coordinator < ApplicationRecord
   validates :home_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }
   validates :mobile_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }, :presence => true
   validates :major, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: {maximum: 50}, :presence => true
-end
+  def self.search(search)
+      if search
+        self.joins(:coordinator_status, :coordinator_position).where(
+          ["coordinators.first_name LIKE ? OR coordinators.last_name LIKE ? OR coordinators.major LIKE ? OR coordinator_statuses.status LIKE ? OR coordinator_positions.position LIKE ? ",
+        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+      else
+
+        self.all
+      end
+    end
+  end 

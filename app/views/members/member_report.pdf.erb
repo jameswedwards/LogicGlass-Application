@@ -1,0 +1,27 @@
+<h1>Reports powered by LogicGlass</h1>
+    <table class="table">
+        <thead>
+            <tr>
+            <th style="width: 200px;">PeopleSoft Number</th>
+                <th style="width: 200px;">First Name</th>
+                <th style="width: 200px;">Last Name</th>
+                <th style="width: 200px;">Student Class</th>
+                <th style="width: 200px;">Student Major</th>
+                <th style="width: 200px;">Paid Member</th>
+                <th style="width: 200px;">Member Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @members.each do |member| %>
+            <tr>
+                <td><%= member.peoplesoft_id %></td>
+                <td><%= member.first_name %></td>
+                <td><%= member.last_name %></td>
+                <td><%= member.student_class.student_class%></td>
+                <td><%= member.major%></td>
+                <td><%= member.payment%></td>
+                <td><%= member.member_status.status %></td>
+            </tr>
+        <% end%>
+        </tbody>
+    </table>

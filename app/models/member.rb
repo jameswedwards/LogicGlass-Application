@@ -18,4 +18,14 @@ class Member < ApplicationRecord
   validates :home_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }
   validates :mobile_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }, :presence => true
   validates :major, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: {maximum: 50}, :presence => true
-end
+  def self.search(search)
+    if search
+      self.joins(:member_status).where(
+        ["members.first_name LIKE ? OR members.last_name LIKE ? OR members.major LIKE ? OR member_statuses.status LIKE ? ",
+      "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+
+      self.all
+    end
+  end
+end 

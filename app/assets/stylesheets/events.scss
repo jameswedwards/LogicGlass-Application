@@ -95,6 +95,9 @@ table td.r, table th.r {
 	width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	height: 700px;
 }
 
 .table100-head th{
@@ -274,4 +277,40 @@ section.positioned {
   background: #F0F0F0;
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
+}
+
+.search_bar {
+  position: relative;
+  left:1150px;
+  display: inline-block;
+}
+.wholeForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statusRow2 {
+  display: flex;
+  flex: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status2 {
+  display: flex;
+  flex: 50%;
+  justify-content: flex-start;
+}
+
+.status1 {
+  display: flex;
+  flex: 25%;
+  justify-content: flex-start;
 }

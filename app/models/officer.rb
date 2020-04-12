@@ -20,4 +20,14 @@ class Officer < ApplicationRecord
   validates :home_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }
   validates :mobile_phone, phone: {possible: true, allow_blank: true}, :format => { :without => /^[a-zA-Z\s]+$/, :multiline => true }, :presence => true
   validates :major, :format => { :with => /^[a-zA-Z\s]+$/, :message => "Only letters allowed", :multiline => true }, length: {maximum: 50}, :presence => true
-end
+  def self.search(search)
+      if search
+        self.joins(:officer_status, :officer_position).where(
+          ["officers.first_name LIKE ? OR officers.last_name LIKE ? OR officers.major LIKE ? OR officer_statuses.status LIKE ? OR officer_positions.position LIKE ? ",
+        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+      else
+
+        self.all
+      end
+    end
+  end 

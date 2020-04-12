@@ -12,80 +12,93 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :description, class: "required" %>
-    <%= form.text_field :description, :size=>"100", placeholder: "Add a title for the event" %>
-  </div>
+  <div class="wholeForm">
 
-  <div class="field">
-    <%= form.label :event_date, class: "required" %>
-    <%= form.datetime_select :event_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true, order: [:month, :day, :year] %>
-  </div>
-
-  <div class="field">
-      <%= form.label :event_type_id, class: "required" %>
-      <%= form.collection_select :event_type_id, EventType.all, :id, :event_type, {:prompt => 'Select Event Type'} %>
-      <%= form.fields_for :event_type do |e| %>
-        <%= render 'event_type_fields', :f => e %>
-      <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add an Event Type', form, :event_type %>
+    <div class="row">
+      <div class="field">
+        <%= form.label :description, class: "required" %>
+        <%= form.text_field :description, :size=>"100", placeholder: "Add a title for the event" %>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :event_status_id, class: "required" %>
-    <%= form.collection_select :event_status_id, EventStatus.all, :id, :status, {:prompt => 'Select Event Status'} %>
-    <%= form.fields_for :event_status do |s| %>
-      <%= render 'event_status_fields', :f => s %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add an Event Status', form, :event_status %>
+    <div class="row">
+          <div class="status1">
+        <div class="field">
+            <%= form.label :event_type_id, class: "required" %>
+            <%= form.collection_select :event_type_id, EventType.all, :id, :event_type, {:prompt => 'Select Event Type'} %>
+            <%= form.fields_for :event_type do |e| %>
+              <%= render 'event_type_fields', :f => e %>
+            <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'Add an Event Type', form, :event_type %>
+          </div>
+        </div>
+      </div>
+      <div class="status1">
+        <div class="field">
+          <%= form.label :event_status_id, class: "required" %>
+          <%= form.collection_select :event_status_id, EventStatus.all, :id, :status, {:prompt => 'Select Event Status'} %>
+          <%= form.fields_for :event_status do |s| %>
+            <%= render 'event_status_fields', :f => s %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'Add an Event Status', form, :event_status %>
+          </div>
+        </div>
+      </div>
+      <div class="status2">
+        <div class="field">
+          <%= form.label :event_date, class: "required" %>
+          <%= form.datetime_select :event_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true, order: [:month, :day, :year] %>
+        </div>
+      </div>
+
+
     </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :sponsor_id, class: "required" %>
-    <%= form.collection_select :sponsor_id, Sponsor.all, :id, :full_name, {:prompt => 'Select Event Sponsor'} %>
-  </div>
+    <div class="row">
+      <div class="field">
+        <%= form.label :sponsor_id, class: "required" %>
+        <%= form.collection_select :sponsor_id, Sponsor.all, :id, :full_name, {:prompt => 'Select Event Sponsor'} %>
+      </div>
+      <div class="field">
+        <%= form.label :fee %>
+        <div class="money"><%= form.text_field :fee, :size=>"4", :value => (number_with_precision(form.object.fee, :precision => 2) || 0) %></div>
+      </div>
+      <div class="field">
+        <%= form.label :address, class: "required" %>
+        <%= form.text_field :address %>
+      </div>
+      <div class="field">
+        <%= form.label :building_name %>
+        <%= form.text_field :building_name, :size=>"16" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :fee %>
-    <div class="money"><%= form.text_field :fee, :size=>"4", :value => (number_with_precision(form.object.fee, :precision => 2) || 0) %></div>
-  </div>
 
-  <div class="field">
-    <%= form.label :address, class: "required" %>
-    <%= form.text_field :address %>
-  </div>
+    <div class="row">
+      <div class="field">
+        <%= form.label :city, class: "required" %>
+        <%= form.text_field :city %>
+      </div>
+      <div class="field">
+        <%= form.label :zip, class: "required" %>
+        <%= form.text_field :zip, :size=>"10" %>
+      </div>
+      <div class="field">
+        <%= form.label :state_id, class: "required" %>
+        <%= form.collection_select :state_id, State.all, :id, :name %>
+      </div>
+      <div class="field">
+        <%= form.label :country_id, class: "required" %>
+        <%= form.collection_select :country_id, Country.all, :id, :name %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :building_name %>
-    <%= form.text_field :building_name, :size=>"16" %>
-  </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
 
-  <div class="field">
-    <%= form.label :city, class: "required" %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :zip, class: "required" %>
-    <%= form.text_field :zip, :size=>"10" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state_id, class: "required" %>
-    <%= form.collection_select :state_id, State.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country_id, class: "required" %>
-    <%= form.collection_select :country_id, Country.all, :id, :name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
 </div>

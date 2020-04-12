@@ -56,6 +56,9 @@ iframe {
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	height: 700px;
 }
 
 table {

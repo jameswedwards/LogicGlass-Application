@@ -6,7 +6,7 @@ class OfficersController < ApplicationController
   # GET /officers
   # GET /officers.json
   def index
-    @officers = Officer.all
+    @officers = Officer.search(params[:search])
   end
 
   # GET /officers/1

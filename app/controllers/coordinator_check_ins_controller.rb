@@ -8,7 +8,7 @@ class CoordinatorCheckInsController < ApplicationController
   # GET /coordinator_check_ins
   # GET /coordinator_check_ins.json
   def index
-    @coordinator_check_ins = CoordinatorCheckIn.all
+    @coordinator_check_ins = CoordinatorCheckIn.search(params[:search])
   end
 
   # GET /coordinator_check_ins/1

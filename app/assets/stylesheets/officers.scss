@@ -57,6 +57,9 @@ iframe {
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	height: 700px;
 }
 
 table {
@@ -234,4 +237,39 @@ section.positioned {
   background: #F0F0F0;
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
+}
+.wholeForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statusRow {
+  display: flex;
+  flex: 65%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status {
+  flex: 35%;
+}
+
+.statusRow2 {
+  display: flex;
+  flex: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status2 {
+  display: flex;
+  flex: 40%;
+  justify-content: flex-start;
 }

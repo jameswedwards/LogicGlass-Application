@@ -12,105 +12,120 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :peoplesoft_id %>
-    <%= form.number_field :peoplesoft_id, :size=>"7" %>
-  </div>
+  <div class="wholeForm">
 
-  <div class="field">
-    <%= form.label :coordinator_position_id %>
-    <%= form.collection_select :coordinator_position_id, CoordinatorPosition.all, :id, :position, {:prompt => 'Select Coordinator Position'} %>
-    <%= form.fields_for :coordinator_position do |p| %>
-      <%= render 'coordinator_position_fields', :f => p %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add a Coordinator Position', form, :coordinator_position %>
+    <div class="row">
+      <div class="field">
+        <%= form.label :peoplesoft_id %>
+        <%= form.number_field :peoplesoft_id, :size=>"7" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :first_name, class: "required" %>
+        <%= form.text_field :first_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :middle_initial %>
+        <%= form.text_field :middle_initial, :size=>"1" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :last_name, class: "required" %>
+        <%= form.text_field :last_name %>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :first_name, class: "required" %>
-    <%= form.text_field :first_name %>
-  </div>
+    <div class="row">
+      <div class="status">
+        <div class="field">
+          <%= form.label :coordinator_position_id %>
+          <%= form.collection_select :coordinator_position_id, CoordinatorPosition.all, :id, :position, {:prompt => 'Select Coordinator Position'} %>
+          <%= form.fields_for :coordinator_position do |p| %>
+            <%= render 'coordinator_position_fields', :f => p %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'Add a Coordinator Position', form, :coordinator_position %>
+          </div>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :middle_initial %>
-    <%= form.text_field :middle_initial, :size=>"1" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name, class: "required" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date_of_birth, class: "required" %>
-    <%= form.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1920, order: [:month, :day, :year] %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address, class: "required" %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city, class: "required" %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :zip, class: "required" %>
-    <%= form.text_field :zip, :size=>"10" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state_id, class: "required" %>
-    <%= form.collection_select :state_id, State.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country_id, class: "required" %>
-    <%= form.collection_select :country_id, Country.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :home_phone %>
-    <%= form.text_field :home_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mobile_phone, class: "required" %>
-    <%= form.text_field :mobile_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :coordinator_status_id, class: "required" %>
-    <%= form.collection_select :coordinator_status_id, CoordinatorStatus.all, :id, :status, {:prompt => 'Select Coordinator Status'} %>
-    <%= form.fields_for :coordinator_status do |c| %>
-      <%= render 'coordinator_status_fields', :f => c %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add a Coordinator Status', form, :coordinator_status %>
+      <div class="statusRow">
+        <div class="field">
+          <%= form.label :date_of_birth, class: "required" %>
+          <%= form.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1920, order: [:month, :day, :year] %>
+        </div>
+        <div class="field">
+          <%= form.label :address, class: "required" %>
+          <%= form.text_field :address %>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :payment%>
-    <%= form.check_box :payment %>
-  </div>
+    <div class="row">
+      <div class="field">
+        <%= form.label :city, class: "required" %>
+        <%= form.text_field :city %>
+      </div>
+      <div class="field">
+        <%= form.label :zip, class: "required" %>
+        <%= form.text_field :zip, :size=>"10" %>
+      </div>
+      <div class="field">
+        <%= form.label :state_id, class: "required" %>
+        <%= form.collection_select :state_id, State.all, :id, :name %>
+      </div>
+      <div class="field">
+        <%= form.label :country_id, class: "required" %>
+        <%= form.collection_select :country_id, Country.all, :id, :name %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :student_class_id, class: "required" %>
-    <%= form.collection_select :student_class_id, StudentClass.all, :id, :student_class, {:prompt => 'Select Student Class'} %>
-  </div>
+    <div class="row">
+      <div class="status2">
+        <div class="field">
+          <%= form.label :coordinator_status_id, class: "required" %>
+          <%= form.collection_select :coordinator_status_id, CoordinatorStatus.all, :id, :status, {:prompt => 'Select Coordinator Status'} %>
+          <%= form.fields_for :coordinator_status do |c| %>
+            <%= render 'coordinator_status_fields', :f => c %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'Add a Coordinator Status', form, :coordinator_status %>
+          </div>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :major, class: "required" %>
-    <%= form.text_field :major,:size=>"25" %>
-  </div>
+      <div class="statusRow2">
+        <div class="field">
+          <%= form.label :home_phone %>
+          <%= form.text_field :home_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
+        </div>
+        <div class="field">
+          <%= form.label :mobile_phone, class: "required" %>
+          <%= form.text_field :mobile_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="row">
+      <div class="field">
+        <%= form.label :payment%>
+        <%= form.check_box :payment %>
+      </div>
+      <div class="field">
+        <%= form.label :student_class_id, class: "required" %>
+        <%= form.collection_select :student_class_id, StudentClass.all, :id, :student_class, {:prompt => 'Select Student Class'} %>
+      </div>
+      <div class="field">
+        <%= form.label :major, class: "required" %>
+        <%= form.text_field :major,:size=>"25" %>
+      </div>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+
   </div>
 <% end %>
 </div>

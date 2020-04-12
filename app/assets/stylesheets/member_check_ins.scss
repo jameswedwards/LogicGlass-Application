@@ -56,6 +56,9 @@ iframe {
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	height: 700px;
 }
 
 table {
@@ -185,4 +188,9 @@ section.positioned {
 .add:active {
   position:relative;
 	top:1px;
+}
+.search_bar {
+  position: relative;
+  left:1150px;
+  display: inline-block;
 }

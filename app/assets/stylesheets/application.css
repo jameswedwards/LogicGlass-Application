@@ -16,7 +16,6 @@
  .background {
    background-image: url("spikes.png");
    background-repeat: repeat;
-   position:fixed;
    padding:0;
    margin:0;
    width: 100%;
@@ -402,4 +401,56 @@
   background: #F0F0F0;
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
+}
+
+.backbtn {
+  box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#5abae6;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+
+.backbtn:hover {
+  background-color:#378de5;
+}
+
+.backbtn:active {
+  position:relative;
+	top:1px;
+}
+
+.minimenu {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#5abae6;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:3px 14px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+
+.minimenu:hover {
+  background-color:#378de5;
+}
+
+.minimenu:active {
+  position:relative;
+	top:1px;
 }
