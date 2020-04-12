@@ -7,6 +7,11 @@ class CoordinatorsController < ApplicationController
   # GET /coordinators.json
   def index
     @coordinators = Coordinator.search(params[:search])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'coordinators/coordinator_report', pdf: 'Report', layout: 'pdf.html'}
+    end
   end
 
   # GET /coordinators/1

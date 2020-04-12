@@ -7,6 +7,11 @@ class SponsorsController < ApplicationController
   # GET /sponsors.json
   def index
     @sponsors = Sponsor.search(params[:search])
+    respond_to do |format|
+     format.html
+     format.json
+     format.pdf { render template: 'sponsors/sponsor_report', pdf: 'Report', layout: 'pdf.html'}
+   end
   end
 
   # GET /sponsors/1

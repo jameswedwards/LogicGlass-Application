@@ -34,3 +34,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/vendor/bundle/ruby/2.7.0/cache/wkhtmltopdf-binary-0.12.5.4.gem

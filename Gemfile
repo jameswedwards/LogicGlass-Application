@@ -37,7 +37,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pagy'
 gem  'groupdate'
-gem "chartkick"
+gem 'chartkick'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
+gem 'wkhtmltopdf-heroku'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
