@@ -12,12 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_06_055701) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "coordinator_check_ins", force: :cascade do |t|
-    t.bigint "coordinator_id", null: false
-    t.bigint "event_id", null: false
+    t.integer "coordinator_id", null: false
+    t.integer "event_id", null: false
     t.datetime "check_in_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,17 +45,17 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
     t.string "address"
     t.string "city"
     t.string "zip"
-    t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
+    t.integer "state_id", null: false
+    t.integer "country_id", null: false
     t.string "home_phone"
     t.string "mobile_phone"
     t.boolean "payment"
-    t.bigint "student_class_id", null: false
+    t.integer "student_class_id", null: false
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "coordinator_position_id", null: false
-    t.bigint "coordinator_status_id", null: false
+    t.integer "coordinator_position_id"
+    t.integer "coordinator_status_id"
     t.index ["coordinator_position_id"], name: "index_coordinators_on_coordinator_position_id"
     t.index ["coordinator_status_id"], name: "index_coordinators_on_coordinator_status_id"
     t.index ["country_id"], name: "index_coordinators_on_country_id"
@@ -90,16 +87,16 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
   create_table "events", force: :cascade do |t|
     t.string "description"
     t.datetime "event_date"
-    t.bigint "event_type_id", null: false
-    t.bigint "event_status_id", null: false
-    t.bigint "sponsor_id", null: false
+    t.integer "event_type_id", null: false
+    t.integer "event_status_id", null: false
+    t.integer "sponsor_id", null: false
     t.decimal "fee"
     t.string "address"
     t.string "building_name"
     t.string "city"
     t.string "zip"
-    t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
+    t.integer "state_id", null: false
+    t.integer "country_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_events_on_country_id"
@@ -110,8 +107,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
   end
 
   create_table "member_check_ins", force: :cascade do |t|
-    t.bigint "member_id", null: false
-    t.bigint "event_id", null: false
+    t.integer "member_id", null: false
+    t.integer "event_id", null: false
     t.datetime "check_in_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -135,16 +132,16 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
     t.string "address"
     t.string "city"
     t.string "zip"
-    t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
+    t.integer "state_id", null: false
+    t.integer "country_id", null: false
     t.string "home_phone"
     t.string "mobile_phone"
     t.boolean "payment"
-    t.bigint "student_class_id", null: false
+    t.integer "student_class_id", null: false
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "member_status_id", null: false
+    t.integer "member_status_id"
     t.index ["country_id"], name: "index_members_on_country_id"
     t.index ["member_status_id"], name: "index_members_on_member_status_id"
     t.index ["state_id"], name: "index_members_on_state_id"
@@ -152,8 +149,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
   end
 
   create_table "officer_check_ins", force: :cascade do |t|
-    t.bigint "officer_id", null: false
-    t.bigint "event_id", null: false
+    t.integer "officer_id", null: false
+    t.integer "event_id", null: false
     t.datetime "check_in_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -184,17 +181,17 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
     t.string "address"
     t.string "city"
     t.string "zip"
-    t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
+    t.integer "state_id", null: false
+    t.integer "country_id", null: false
     t.string "home_phone"
     t.string "mobile_phone"
     t.boolean "payment"
-    t.bigint "student_class_id", null: false
+    t.integer "student_class_id", null: false
     t.string "major"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "officer_status_id", null: false
-    t.bigint "officer_position_id", null: false
+    t.integer "officer_status_id"
+    t.integer "officer_position_id"
     t.index ["country_id"], name: "index_officers_on_country_id"
     t.index ["officer_position_id"], name: "index_officers_on_officer_position_id"
     t.index ["officer_status_id"], name: "index_officers_on_officer_status_id"
@@ -214,7 +211,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
     t.string "last_name"
     t.string "home_phone"
     t.string "mobile_phone"
-    t.bigint "sponsor_type_id", null: false
+    t.integer "sponsor_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "company"
@@ -222,7 +219,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_055701) do
   end
 
   create_table "states", force: :cascade do |t|
-    t.bigint "country_id", null: false
+    t.integer "country_id", null: false
     t.string "name"
     t.string "state_abbreviation"
     t.datetime "created_at", precision: 6, null: false
