@@ -1,0 +1,39 @@
+<h1>Reports powered by LogicGlass</h1>
+    <table class="table">
+        <thead>
+            <tr>
+            <th style="width: 200px;">Description</th>
+                <th style="width: 200px;">Date</th>
+                <th style="width: 200px;">Event Type</th>
+                <th style="width: 200px;">Event Status</th>
+                <th style="width: 200px;">Sponsor</th>
+                <th style="width: 200px;">Fee</th>
+                <th style="width: 200px;">Address</th>
+                <th style="width: 200px;">Building</th>
+                <th style="width: 200px;">City</th>
+                <th style="width: 200px;">Zip</th>
+                <th style="width: 200px;">State</th>
+                <th style="width: 200px;">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @events.each do |event| %>
+            <tr>
+                <td><%= event.description %></td>
+                <td><%= event.event_date.strftime("%b %e %Y %I:%M %p") %></td>
+                <td><%= event.event_type.event_type %></td>
+                <td><%= event.event_status.status%></td>
+                <td><%= event.sponsor.full_name%></td>
+                <td><%= event.fee%></td>
+                <td><%= event.address %></td>
+                <td><%= event.building_name %></td>
+                <td><%= event.city %></td>
+                <td><%= event.zip %></td>
+                <td><%= event.state.name %></td>
+                <td><%= event.country.name %></td>
+            </tr>
+        <% end%>
+        </tbody>
+    </table>
+    
+

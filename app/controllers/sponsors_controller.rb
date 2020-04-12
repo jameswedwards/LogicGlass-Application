@@ -6,6 +6,12 @@ class SponsorsController < ApplicationController
   # GET /sponsors.json
   def index
     @sponsors = Sponsor.all
+    @members = Member.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'sponsors/sponsor_report', pdf: 'Report', layout: 'pdf.html'}
+    end
   end
 
   # GET /sponsors/1

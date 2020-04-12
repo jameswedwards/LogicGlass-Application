@@ -11,6 +11,12 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @members = Member.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'events/event_report', pdf: 'Report', layout: 'pdf.html'}
+    end
   end
 
   # GET /events/1

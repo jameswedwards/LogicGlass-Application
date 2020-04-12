@@ -1,4 +1,13 @@
-<div class="background">
+<div class="">
 <h1>Reports</h1>
-<p>This is a reports page. Charts and Graphs will go here</p>
+</div>
+
+<div class="charts">
+
+<%= pie_chart Member.group(:payment).count, title: "Members Payment Status", download: true%>
+
+<%= area_chart Event.group_by_month(:event_date, time_zone: false).count, title: "Events per Month", xtitle: "Month", ytitle: "Number of Events", download: true %>
+
+<%= column_chart Event.group(:description).count, title: "Types of Events", xtitle: "Description", ytitle: "Number of Events", download: true %>
+
 </div>

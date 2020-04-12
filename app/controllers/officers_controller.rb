@@ -7,6 +7,12 @@ class OfficersController < ApplicationController
   # GET /officers.json
   def index
     @officers = Officer.all
+    @members = Member.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'officers/officer_report', pdf: 'Report', layout: 'pdf.html'}
+    end
   end
 
   # GET /officers/1
