@@ -21,7 +21,7 @@ a {
 
 a:focus {
 	outline: none !important;
-}
+} 
 
 a:hover {
 	text-decoration: none;
@@ -228,4 +228,27 @@ section.positioned {
   background: #F0F0F0;
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
+}
+
+.wholeForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statusRow {
+  display: flex;  
+  flex: 70%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status {
+  flex: 30%;
 }

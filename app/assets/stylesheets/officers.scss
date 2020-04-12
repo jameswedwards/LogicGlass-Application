@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 * {
-	margin: 0px;
+	margin: 0px; 
 	padding: 0px;
 	box-sizing: border-box;
 }
@@ -235,3 +235,39 @@ section.positioned {
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
 }
+
+.wholeForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statusRow {
+  display: flex;  
+  flex: 65%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status {
+  flex: 35%;
+}
+
+.statusRow2 {
+  display: flex;  
+  flex: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status2 {
+  display: flex;
+  flex: 40%;
+  justify-content: flex-start;
+} 

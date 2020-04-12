@@ -17,7 +17,7 @@ a {
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
-}
+} 
 
 a:focus {
 	outline: none !important;
@@ -274,4 +274,35 @@ section.positioned {
   background: #F0F0F0;
   border-radius: 2px;
   padding: 55px 95px 68px 95px;
+}
+
+.wholeForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statusRow2 {
+  display: flex;  
+  flex: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status2 {
+  display: flex;
+  flex: 50%;
+  justify-content: flex-start;
+}
+
+.status1 {
+  display: flex;
+  flex: 25%;
+  justify-content: flex-start;
 }
