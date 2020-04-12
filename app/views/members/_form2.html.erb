@@ -12,7 +12,6 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
   <div class="wholeForm">
     <div class="row">
       <div class="field">
@@ -112,90 +111,6 @@
         <%= form.submit %>
       </div>
 
-=======
-  <div class="field">
-    <%= form.label :peoplesoft_id, class: "required" %>
-    <%= form.number_field :peoplesoft_id, :size=>"7" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name, class: "required" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :middle_initial %>
-    <%= form.text_field :middle_initial, :size=>"1" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name, class: "required" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date_of_birth, class: "required" %>
-    <%= form.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1920, order: [:month, :day, :year] %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address, class: "required" %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city, class: "required" %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :zip, class: "required" %>
-    <%= form.text_field :zip, :size=>"10" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state_id, class: "required" %>
-    <%= form.collection_select :state_id, State.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country_id, class: "required" %>
-    <%= form.collection_select :country_id, Country.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :home_phone %>
-    <%= form.text_field :home_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mobile_phone, class: "required" %>
-    <%= form.text_field :mobile_phone, :size=>"16", placeholder: "XXX-XXXX-XXXX" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :member_status_id, class: "required" %>
-    <%= form.collection_select :member_status_id, MemberStatus.all, :id, :status, {:prompt => 'Select Member Status'} %>
-  </div>
-
-  <div class="field">
-    <%= form.label :payment %>
-    <%= form.check_box :payment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :student_class_id, class: "required" %>
-    <%= form.collection_select :student_class_id, StudentClass.all, :id, :student_class, {:prompt => 'Select Student Class'} %>
-  </div>
-
-  <div class="field">
-    <%= form.label :major, class: "required" %>
-    <%= form.text_field :major, :size=>"25" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
->>>>>>> 31723d0c095084d2310a9f075aaf0a5bff4f6795
   </div>
 <% end %>
 </div>

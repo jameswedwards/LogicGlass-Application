@@ -64,6 +64,6 @@
   <%= @event.country.name %>
 </li>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), class: "backbtn" %> |
+<%= link_to 'Back', events_path, class: "backbtn" %>
 </div>

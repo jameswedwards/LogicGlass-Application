@@ -19,8 +19,8 @@
   <%= @member_check_in.check_in_date.strftime("%I:%M %p") %>
 </li>
 
-<%= link_to 'Edit', edit_member_check_in_path(@member_check_in) %> |
-<%= link_to 'Back', member_check_ins_path %>
+<%= link_to 'Edit', edit_member_check_in_path(@member_check_in), class: "backbtn" %> |
+<%= link_to 'Back', member_check_ins_path, class: "backbtn" %>
 </div>
 </div>
 </div>
