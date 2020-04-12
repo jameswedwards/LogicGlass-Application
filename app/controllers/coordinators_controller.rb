@@ -6,7 +6,7 @@ class CoordinatorsController < ApplicationController
   # GET /coordinators
   # GET /coordinators.json
   def index
-    @coordinators = Coordinator.all
+    @coordinators = Coordinator.search(params[:search])
   end
 
   # GET /coordinators/1

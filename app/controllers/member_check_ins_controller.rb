@@ -9,7 +9,7 @@ class MemberCheckInsController < ApplicationController
   # GET /member_check_ins
   # GET /member_check_ins.json
   def index
-    @member_check_ins = MemberCheckIn.all
+    @member_check_ins = MemberCheckIn.search(params[:search])
   end
 
   # GET /member_check_ins/1

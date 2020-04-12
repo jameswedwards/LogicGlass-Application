@@ -9,7 +9,7 @@ class OfficerCheckInsController < ApplicationController
   # GET /officer_check_ins
   # GET /officer_check_ins.json
   def index
-    @officer_check_ins = OfficerCheckIn.all
+    @officer_check_ins = OfficerCheckIn.search(params[:search])
   end
 
   # GET /officer_check_ins/1
