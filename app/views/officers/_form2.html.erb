@@ -118,4 +118,7 @@
 
     </div>
 <% end %>
+<%= link_to 'Show', @officer, class: "backbtn" %> |
+<%= link_to 'Destroy', @officer, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this officer' }, class: "backbtn" %> |
+<%= link_to 'Back', officers_path, class: "backbtn" %>
 </div>

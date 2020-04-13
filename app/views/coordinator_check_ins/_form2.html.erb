@@ -1,0 +1,36 @@
+<div class="checkin-container">
+<%= form_with(model: coordinator_check_in, local: true, html: {class: "checkin-form"}) do |form| %>
+  <% if coordinator_check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coordinator_check_in.errors.count, "error") %> prohibited this coordinator_check_in from being saved:</h2>
+
+      <ul>
+        <% coordinator_check_in.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coordinator_id, class: "required" %>
+    <%= form.collection_select :coordinator_id, Coordinator.all, :id, :full_name, {:prompt => 'Select Coordinator'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id, class: "required" %>
+    <%= form.collection_select :event_id, Event.all, :id, :description, {:prompt => 'Select Event'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_in_date, class: "required" %>
+    <%= form.datetime_select :check_in_date, :start_year => Date.current.year, :end_year => 1920, :ampm => true, order: [:month, :day, :year] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= link_to 'Show', @coordinator_check_in, class: "backbtn" %> |
+<%= link_to 'Back', coordinator_check_ins_path, class: "backbtn" %>
+</div>

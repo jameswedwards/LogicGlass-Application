@@ -1,13 +1,17 @@
-<div class="background">
 <h1>Reports</h1>
 <%= link_to 'Back', 'javascript:history.back()', class: "backbtn" %>
 <div class="charts">
 
-<%= pie_chart Member.group(:payment).count, title: "Members Payment Status", download: true%>
+<%= pie_chart Member.group(:payment).count, title: "Members' Payment Status", download: true%><br><br>
 
-<%= area_chart Event.group_by_month(:event_date, time_zone: false).count, title: "Events per Month", xtitle: "Month", ytitle: "Number of Events", download: true %>
+<%= area_chart Event.group_by_month(:event_date, time_zone: false).count, title: "Events per Month", xtitle: "Month", ytitle: "Number of Events", download: true %><br><br>
 
-<%= column_chart Event.group(:description).count, title: "Types of Events", xtitle: "Description", ytitle: "Number of Events", download: true %>
+<%= bar_chart MemberCheckIn.joins(:event).group('description').limit(5).count, title: "Top 5 Highest Attended Events", xtitle: "Event", ytitle: "# of Attendees", download: true %><br><br>
 
-</div>
+<%= pie_chart Event.joins(:event_type).group('Event_Type').count, title: "Events by Event Type", download: true %><br><br>
+
+<%= pie_chart Sponsor.joins(:sponsor_type).group('Sponsor_Type').count, title: "Sponsors by Sponsor Type", download: true %>
+
+
+
 </div>

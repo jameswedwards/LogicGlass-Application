@@ -113,4 +113,7 @@
 
   </div>
 <% end %>
+<%= link_to 'Show', @member, class: "backbtn" %> |
+<%= link_to 'Destroy', @member, method: :delete, data: { confirm: 'Are you sure? This will delete all rows associated with this member' }, class: "backbtn" %> |
+<%= link_to 'Back', members_path, class: "backbtn" %>
 </div>
