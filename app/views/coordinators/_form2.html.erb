@@ -41,12 +41,6 @@
         <div class="field">
           <%= form.label :coordinator_position_id %>
           <%= form.collection_select :coordinator_position_id, CoordinatorPosition.all, :id, :position, {:prompt => 'Select Coordinator Position'} %>
-          <%= form.fields_for :coordinator_position do |p| %>
-            <%= render 'coordinator_position_fields', :f => p %>
-          <% end %>
-          <div class='links'>
-            <%= link_to_add_association 'Add a Coordinator Position', form, :coordinator_position %>
-          </div>
         </div>
       </div>
 
@@ -86,12 +80,6 @@
         <div class="field">
           <%= form.label :coordinator_status_id, class: "required" %>
           <%= form.collection_select :coordinator_status_id, CoordinatorStatus.all, :id, :status, {:prompt => 'Select Coordinator Status'} %>
-          <%= form.fields_for :coordinator_status do |c| %>
-            <%= render 'coordinator_status_fields', :f => c %>
-          <% end %>
-          <div class='links'>
-            <%= link_to_add_association 'Add a Coordinator Status', form, :coordinator_status %>
-          </div>
         </div>
       </div>
 
