@@ -30,4 +30,4 @@ class Coordinator < ApplicationRecord
         self.all
       end
     end
-  end 
+  end
