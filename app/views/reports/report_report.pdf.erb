@@ -1,0 +1,97 @@
+<h1>Reports powered by LogicGlass</h1><br><br>
+<table class="table">
+    <h2 style="text-align: center;">Number of Events per Event Type</h2>
+    <thead>
+        <tr>
+            <th style="width: 200px;">Event Type</th>
+            <th style="width: 200px;">Number of Events</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @event.each do |event| %>
+        <tr>
+            <td><%= event[0] %></td>
+            <td><%= event[1] %></td>
+        </tr>
+    <% end%>
+    </tbody>
+</table><br>
+<p style='page-break-after:always;'></p>
+<table class="table">
+    <h2 style="text-align: center;">Events per Month</h2>
+    <thead>
+        <tr>
+            <th style="width: 200px;">Month</th>
+            <th style="width: 200px;">Number of Events</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @events.each do |event| %>
+        <tr>
+            <td><%= event[0] %></td>
+            <td><%= event[1] %></td>
+        </tr>
+    <% end%>
+    </tbody>
+</table><br>
+<p style='page-break-after:always;'></p>
+<table class="table">
+    <h2 style="text-align: center;">Top 5 Highest Attended Events</h2>
+    <thead>
+        <tr>
+            <th style="width: 200px;">Event </th>
+            <th style="width: 200px;">Number of Members</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @member_check_ins.each do |member_check_in| %>
+        <tr>
+            <td><%= member_check_in[0] %></td>
+            <td><%= member_check_in[1] %></td>
+        </tr>
+    <% end%>
+    </tbody>
+</table><br>
+<p style='page-break-after:always;'></p>
+<table class="table">
+    <h2 style="text-align: center;">Member Payment Status</h2>
+    <thead>
+        <tr>
+            <th style="width: 200px;">Member Name</th>
+            <th style="width: 200px;">Payment Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @members.each do |member| %>
+        <tr>
+            <td><%= member.first_name + ' ' %> <% if member.middle_initial.present? %>
+                <%= member.middle_initial + '. ' %>
+              <% else %>
+              <% end %> <%= member.last_name %></td>
+            <td><% member.payment %> <% if member.payment == true %>
+                <%= "Paid"%>
+              <% else %>
+                <%= "Not Paid" %>
+              <% end %></td>
+        </tr>
+    <% end%>
+    </tbody>
+</table><br>
+<p style='page-break-after:always;'></p>
+<table class="table">
+    <h2 style="text-align: center;">Number of Sponsors per Sponsor Type</h2>
+    <thead>
+        <tr>
+            <th style="width: 200px;">Sponsor Type</th>
+            <th style="width: 200px;">Number of Sponsors</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @sponsors.each do |sponsor| %>
+        <tr>
+            <td><%= sponsor[0] %></td>
+            <td><%= sponsor[1] %></td>
+        </tr>
+    <% end%>
+    </tbody>
+</table>

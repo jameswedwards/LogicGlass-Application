@@ -40,7 +40,6 @@ gem  'groupdate'
 gem 'chartkick'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-gem 'wkhtmltopdf-binary-edge'
 gem 'wkhtmltopdf-heroku'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

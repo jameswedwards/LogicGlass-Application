@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
   <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
@@ -20,18 +18,18 @@
 <table class="table table-bordered sortable">
   <thead>
     <tr class="table100-head">
-      <th class="column1">Description</th>
-      <th class="column2">Event date</th>
-      <th class="column3">Event type</th>
-      <th class="column4">Event status</th>
-      <th class="column5">Sponsor</th>
-      <th class="column6">Fee</th>
-      <th class="column7">Address</th>
-      <th class="column8">Building</th>
-      <th class="column9">City</th>
-      <th class="column10">Zip</th>
-      <th class="column11">State</th>
-      <th class="column12">Country</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Sponsor</th>
+      <th>Fee</th>
+      <th>Address</th>
+      <th>Building</th>
+      <th>City</th>
+      <th>ZIP</th>
+      <th>State</th>
+      <th>Country</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,18 +37,18 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td class="column1"><%= event.description %></td>
-        <td class="column2"><%= event.event_date.strftime("%b %e %Y %I:%M %p") %></td>
-        <td class="column3"><%= event.event_type.event_type %></td>
-        <td class="column4"><%= event.event_status.status %></td>
-        <td class="column5"><%= event.sponsor.full_name %></td>
-        <td class="column6"><%= number_to_currency(event.fee) %></td>
-        <td class="column7"><%= event.address %></td>
-        <td class="column8"><%= event.building_name %></td>
-        <td class="column9"><%= event.city %></td>
-        <td class="column10"><%= event.zip %></td>
-        <td class="column11"><%= event.state.name %></td>
-        <td class="column12"><%= event.country.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.event_date.strftime("%b %e %Y %I:%M %p") %></td>
+        <td><%= event.event_type.event_type %></td>
+        <td><%= event.event_status.status %></td>
+        <td><%= event.sponsor.full_name %></td>
+        <td><%= number_to_currency(event.fee) %></td>
+        <td><%= event.address %></td>
+        <td><%= event.building_name %></td>
+        <td><%= event.city %></td>
+        <td><%= event.zip %></td>
+        <td><%= event.state.state_abbreviation %></td>
+        <td><%= event.country.country_abbreviation %></td>
         <td class="column13"><%= link_to 'View Event', event, class: "show" %></td>
         <td class="column14"><%= link_to 'Edit Event', edit_event_path(event), class: "show" %></td>
       </tr>

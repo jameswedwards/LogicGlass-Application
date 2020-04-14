@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,31 +25,31 @@
 <table class="table table-bordered sortable">
   <thead>
     <tr class="table100-head">
-      <th class="column1">Peoplesoft</th>
-      <th class="column2">Full name</th>
-      <th class="column3">Student class</th>
-      <th class="column4">Major</th>
-      <th class="column5">Paid</th>
-      <th class="column6">Member Status</th>
+      <th>Peoplesoft</th>
+      <th>Full Name</th>
+      <th>Student Class</th>
+      <th>Major</th>
+      <th>Paid</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td class="column1"><%= member.peoplesoft_id %></td>
-        <td class="column2"><%= member.first_name + ' ' %> <% if member.middle_initial.present? %>
+        <td><%= member.peoplesoft_id %></td>
+        <td><%= member.first_name + ' ' %> <% if member.middle_initial.present? %>
             <%= member.middle_initial + '. ' %>
           <% else %>
           <% end %> <%= member.last_name %></td>
-        <td class="column3"><%= member.student_class.student_class %></td>
-        <td class="column4"><%= member.major %></td>
-        <td class="column5"><% member.payment %> <% if member.payment == true %>
+        <td><%= member.student_class.student_class %></td>
+        <td><%= member.major %></td>
+        <td><% member.payment %> <% if member.payment == true %>
             <%= image_tag "check.png", class: "check"%>
           <% else %>
             <%= image_tag "cross.png", class: "cross"%>
           <% end %></td>
-        <td class="column6"><%= member.member_status.status %></td>
+        <td><%= member.member_status.status %></td>
         <td class="column7"><%= link_to 'View Contact', member, class: "show" %></td>
         <td class="column8"><%= link_to 'Edit Contact', edit_member_path(member), class: "show" %></td>
       </tr>

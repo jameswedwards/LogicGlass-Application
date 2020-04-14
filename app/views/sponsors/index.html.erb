@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
-
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -26,10 +24,10 @@
 <table class="table table-bordered sortable">
   <thead>
     <tr class="table100-head">
-      <th class="column1">Company</th>
-      <th class="column2">Sponsor name</th>
-      <th class="column3">Primary phone</th>
-      <th class="column5">Sponsor type</th>
+      <th>Company</th>
+      <th>Sponsor Name</th>
+      <th>Primary Phone</th>
+      <th>Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -37,10 +35,10 @@
   <tbody>
     <% @sponsors.each do |sponsor| %>
       <tr>
-        <td class="column1"><%= sponsor.company %></td>
-        <td class="column2"><%= sponsor.first_name + ' ' + sponsor.last_name %></td>
-        <td class="column3"><%= sponsor.mobile_phone %></td>
-        <td class="column5"><%= sponsor.sponsor_type.sponsor_type %></td>
+        <td><%= sponsor.company %></td>
+        <td><%= sponsor.first_name + ' ' + sponsor.last_name %></td>
+        <td><%= sponsor.mobile_phone %></td>
+        <td><%= sponsor.sponsor_type.sponsor_type %></td>
         <td class="column6"><%= link_to 'View Contact', sponsor, class: "show" %></td>
         <td class="column7"><%= link_to 'Edit Contact', edit_sponsor_path(sponsor), class: "show" %></td>
       </tr>

@@ -11,7 +11,7 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :event_status, reject_if: :all_blank, allow_destroy: true
   validates :description, :format => { :with => /^[a-zA-Z0-9.:!\s]+$/, :message => "Only letters, numbers, and certain characters allowed", :multiline => true }, length: { in: 2..100 }, :presence => true
   validates :fee, :format => { :with => /^(\d{0,5}\.\d{1,2}|\d{1,5})$/, :message => "Only numbers and up to 2 decimal points allowed", :multiline => true }, :presence => true
-  validates :building_name, length: {maximum: 50}, :presence => true
+  validates :building_name, length: {maximum: 50}, :allow_blank => true
   validates :city, length: {maximum: 50}, :presence => true
   validates :zip, zipcode: { country_code: :es }, :presence => true
   def self.search(search)

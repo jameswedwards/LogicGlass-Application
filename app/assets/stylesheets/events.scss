@@ -66,6 +66,9 @@ table {
 table * {
   position: relative;
 }
+table th {
+	background-color: #006eff;
+}
 table td, table th {
   padding-left: 8px;
 }
