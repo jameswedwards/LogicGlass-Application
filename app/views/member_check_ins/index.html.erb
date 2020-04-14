@@ -12,7 +12,7 @@
 <div class="w3-center"><%= link_to "Member Check In", member_check_ins_path, class: "minimenu" %>
 <%= link_to "Officer Check In", officer_check_ins_path, class: "minimenu" %>
 <%= link_to "Coordinator Check In", coordinator_check_ins_path, class: "minimenu" %></div>
-<h1>Member Check-Ins</h1><br>
+<h1>Member Check-Ins</h1>
 <div class ="search_bar">
     <%= form_tag member_check_ins_path, :method => 'get' do %>
         <%= text_field_tag :search, params[:search] %>

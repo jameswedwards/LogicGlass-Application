@@ -11,7 +11,7 @@
 <div class="background">
 <p id="notice"><%= notice %></p>
 
-<h1>Members</h1><br>
+<h1>Members</h1>
 <div class ="search_bar">
     <%= form_tag members_path, :method => 'get' do %>
         <%= text_field_tag :search, params[:search] %>
